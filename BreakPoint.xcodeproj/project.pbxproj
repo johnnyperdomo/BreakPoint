@@ -56,15 +56,55 @@
 		FE3A6508207934E900C1292E /* BreakPoint */ = {
 			isa = PBXGroup;
 			children = (
+				FE3A65212079359500C1292E /* Services */,
+				FE3A65202079356B00C1292E /* Extensions */,
+				FE3A651F2079355800C1292E /* Model */,
+				FE3A651E2079354C00C1292E /* View */,
+				FE3A651D2079353100C1292E /* Controller */,
 				FE3A6509207934E900C1292E /* AppDelegate.swift */,
-				FE3A650B207934E900C1292E /* FirstViewController.swift */,
-				FE3A650D207934E900C1292E /* SecondViewController.swift */,
 				FE3A650F207934E900C1292E /* Main.storyboard */,
 				FE3A6512207934EA00C1292E /* Assets.xcassets */,
 				FE3A6514207934EA00C1292E /* LaunchScreen.storyboard */,
 				FE3A6517207934EA00C1292E /* Info.plist */,
 			);
 			path = BreakPoint;
+			sourceTree = "<group>";
+		};
+		FE3A651D2079353100C1292E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FE3A650B207934E900C1292E /* FirstViewController.swift */,
+				FE3A650D207934E900C1292E /* SecondViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FE3A651E2079354C00C1292E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FE3A651F2079355800C1292E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FE3A65202079356B00C1292E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FE3A65212079359500C1292E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
