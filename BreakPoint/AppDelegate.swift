@@ -18,6 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        if Auth.auth().currentUser == nil { //if there is no user logged in, present AuthVC
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main) //constant to hold the storyboard
+            let authVC = storyboard.instantiateViewController(withIdentifier: "AuthVC")
+            window?.makeKeyAndVisible() //make it key window
+            window?.rootViewController?.present(authVC, animated: true, completion: nil) //call a viewController on top of the rootView controller(or the view controller we are currently on.) So it doesn't matter what screen youre on, if logged out...authVC will present.
+            
+        }
+        
+        
         return true
     }
 
