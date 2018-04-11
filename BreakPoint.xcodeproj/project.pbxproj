@@ -22,6 +22,7 @@
 		FE65E3B62079AB2A007E3EB8 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE65E3B52079AB2A007E3EB8 /* ShadowView.swift */; };
 		FE83B152207D6C8700DE048A /* CreatePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE83B151207D6C8700DE048A /* CreatePostVC.swift */; };
 		FE8690ED207AF36300D5F00B /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8690EC207AF36300D5F00B /* AuthService.swift */; };
+		FE96131C207EBAC4002FC0C7 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE96131B207EBAC4002FC0C7 /* UIViewExt.swift */; };
 		FEEBDB9B2079509C00626425 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEBDB9A2079509C00626425 /* DataService.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		FE65E3B52079AB2A007E3EB8 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		FE83B151207D6C8700DE048A /* CreatePostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostVC.swift; sourceTree = "<group>"; };
 		FE8690EC207AF36300D5F00B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		FE96131B207EBAC4002FC0C7 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		FEEBDB9A2079509C00626425 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +147,7 @@
 		FE3A65202079356B00C1292E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FE96131B207EBAC4002FC0C7 /* UIViewExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE96131C207EBAC4002FC0C7 /* UIViewExt.swift in Sources */,
 				FE5D0250207C3524000277AB /* MeVC.swift in Sources */,
 				FE65E3B02079A598007E3EB8 /* AuthVC.swift in Sources */,
 				FE3A650E207934E900C1292E /* SecondViewController.swift in Sources */,
