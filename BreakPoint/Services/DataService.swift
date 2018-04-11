@@ -44,12 +44,15 @@ class DataService {
         REF_USERS.child(uid).updateChildValues(userData) // make a firebase user
     }
     
-    
-    
-    
-    
-    
-    
-    
+    func uploadPost(withMessage message: String, forUID uid: String, withGroupKey groupKey: String?, sendComplete: @escaping (_ status: Bool) -> ()) { //upload a post to the feed and add it to the firebase Database //'groupkey' is whether its being posted in group or public feed
+        
+        if groupKey != nil { //if there is a group key
+        //send to groups ref
+        } else { //if it doesn't have a group key, post into the public feed
+            REF_FEED.childByAutoId().updateChildValues(["content": message, "senderID": uid]) //childByAutoId() gives each message a custom random ID// each message needs content and a sender id
+            sendComplete(true)
+        }
+        
+    }
     
 }

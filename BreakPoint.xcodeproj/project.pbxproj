@@ -20,6 +20,7 @@
 		FE65E3B22079A5D0007E3EB8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE65E3B12079A5D0007E3EB8 /* LoginVC.swift */; };
 		FE65E3B42079A64B007E3EB8 /* InsetTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE65E3B32079A64B007E3EB8 /* InsetTextField.swift */; };
 		FE65E3B62079AB2A007E3EB8 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE65E3B52079AB2A007E3EB8 /* ShadowView.swift */; };
+		FE83B152207D6C8700DE048A /* CreatePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE83B151207D6C8700DE048A /* CreatePostVC.swift */; };
 		FE8690ED207AF36300D5F00B /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8690EC207AF36300D5F00B /* AuthService.swift */; };
 		FEEBDB9B2079509C00626425 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEBDB9A2079509C00626425 /* DataService.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		FE65E3B12079A5D0007E3EB8 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		FE65E3B32079A64B007E3EB8 /* InsetTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetTextField.swift; sourceTree = "<group>"; };
 		FE65E3B52079AB2A007E3EB8 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		FE83B151207D6C8700DE048A /* CreatePostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostVC.swift; sourceTree = "<group>"; };
 		FE8690EC207AF36300D5F00B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		FEEBDB9A2079509C00626425 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +121,7 @@
 				FE65E3AF2079A598007E3EB8 /* AuthVC.swift */,
 				FE65E3B12079A5D0007E3EB8 /* LoginVC.swift */,
 				FE5D024F207C3524000277AB /* MeVC.swift */,
+				FE83B151207D6C8700DE048A /* CreatePostVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				FE8690ED207AF36300D5F00B /* AuthService.swift in Sources */,
 				FE3A650A207934E900C1292E /* AppDelegate.swift in Sources */,
 				FE65E3B62079AB2A007E3EB8 /* ShadowView.swift in Sources */,
+				FE83B152207D6C8700DE048A /* CreatePostVC.swift in Sources */,
 				FE3A650C207934E900C1292E /* FirstViewController.swift in Sources */,
 				FE65E3B42079A64B007E3EB8 /* InsetTextField.swift in Sources */,
 				FEEBDB9B2079509C00626425 /* DataService.swift in Sources */,
