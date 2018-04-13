@@ -52,7 +52,40 @@ class DataService {
             REF_FEED.childByAutoId().updateChildValues(["content": message, "senderID": uid]) //childByAutoId() gives each message a custom random ID// each message needs content and a sender id
             sendComplete(true)
         }
-        
     }
     
+    //to pull the feed messages from the database.
+    func getAllFeedMessages(handler: @escaping (_ messages: [Message]) -> ()) { //this pulls an array of our message model, we can pass this message back to view controller
+        
+        var messageArray = [Message]() //array of type message to pass it into
+        
+        REF_FEED.observeSingleEvent(of: .value) { (feedMessageSnapshot) in //this downloads every message from the feed database, and saves it into a snapshot from firebase
+            guard let feedMessageSnapshot = feedMessageSnapshot.children.allObjects as? [DataSnapshot] else {return} //allobjects pulls all messages from the feed
+            
+            for message in feedMessageSnapshot { //loop through all messages in feed, pull out content and senderId
+                let content = message.childSnapshot(forPath: "content").value as! String //we dont want the key, we want the value( which is the message); cast as string
+                let senderId = message.childSnapshot(forPath: "senderID").value as! String //pulls out the sender id from the snapshot
+                let message = Message(content: content, senderId: senderId) //create a message by initializing it, using it from firebase
+                messageArray.append(message) //append the message we created to the Message Array
+            }
+            //once we finish cycling call the completion handler
+            handler(messageArray) //calls message array
+        }
+    }
+    
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
