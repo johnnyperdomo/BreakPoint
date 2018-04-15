@@ -25,7 +25,7 @@ class FeedsVC: UIViewController {
         super.viewDidAppear(animated)
         
         DataService.instance.getAllFeedMessages { (returnedMessagesArray) in
-            self.messageArray = returnedMessagesArray //now its downloaded and our array is the same
+            self.messageArray = returnedMessagesArray.reversed() //now its downloaded and our array is the same; 'reversed' reverses the order of the array and shows the most recent message at the top of the tableView
             self.tableView.reloadData() //reloads the tableViewData
         }
     }
@@ -49,7 +49,9 @@ extension FeedsVC: UITableViewDelegate, UITableViewDataSource {
         let image = UIImage(named: "defaultProfileImage")
         let message = messageArray[indexPath.row] //gets messages in order
 
-        cell.configureCell(profileImage: image!, email: message.senderId, messageContent: message.content) //configure the cell, this updates the values in the cell according to the pulled data
+        DataService.instance.getUsername(forUID: message.senderId) { (returnedUsername) in //the returnedUsername is our email that we pulled
+            cell.configureCell(profileImage: image!, email: returnedUsername, messageContent: message.content) //configure the cell, this updates the values in the cell according to the pulled data
+        }
         return cell
     }
 }

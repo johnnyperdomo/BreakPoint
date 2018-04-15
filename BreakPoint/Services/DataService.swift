@@ -44,6 +44,19 @@ class DataService {
         REF_USERS.child(uid).updateChildValues(userData) // make a firebase user
     }
     
+    
+    func getUsername(forUID uid: String, handler: @escaping (_ username: String) -> ()) { //func to convert uid into a username
+        REF_USERS.observeSingleEvent(of: .value) { (userSnapshot) in
+            guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return } //allobjects pulls all users
+            
+            for user in userSnapshot {
+                if user.key == uid { //if the user's key matches the uid we pass in
+                    handler(user.childSnapshot(forPath: "email").value as! String) //find the user that matches the user id and gets the email back
+                }
+            }
+        }
+    }
+    
     func uploadPost(withMessage message: String, forUID uid: String, withGroupKey groupKey: String?, sendComplete: @escaping (_ status: Bool) -> ()) { //upload a post to the feed and add it to the firebase Database //'groupkey' is whether its being posted in group or public feed
         
         if groupKey != nil { //if there is a group key

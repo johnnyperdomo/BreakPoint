@@ -24,6 +24,12 @@ class CreatePostVC: UIViewController {
         sendBtn.bindToKeyboard()
     }
     
+    override func viewWillAppear(_ animated: Bool) { //update the changes, view will appear
+        super.viewWillAppear(animated)
+        self.emailLbl.text = Auth.auth().currentUser?.email //matches the emailLbl
+    }
+    
+    
     @IBAction func closeBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
