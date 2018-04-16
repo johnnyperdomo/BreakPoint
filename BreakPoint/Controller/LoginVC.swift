@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var emailTxtField: InsetTextField!
     
@@ -52,7 +52,4 @@ class LoginVC: UIViewController {
     
 }
 
-extension LoginVC: UITextFieldDelegate {
-    
-}
 

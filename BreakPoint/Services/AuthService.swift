@@ -22,6 +22,7 @@ class AuthService {
             }
             
             let userData = ["provider": user.providerID, "email": user.email] //dictionary of user data
+            
             DataService.instance.createDBUser(uid: user.uid, userData: userData) //if we have a user, he will be sent to firebase database.
             userCreationComplete(true, nil) //true, no error
         }
