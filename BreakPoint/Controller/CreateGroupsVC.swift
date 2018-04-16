@@ -18,6 +18,7 @@ class CreateGroupsVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
   
     var emailArray = [String]()
+    var chosenUserArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,11 @@ class CreateGroupsVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         emailSearchTextField.delegate = self
         emailSearchTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged) //use this to monitor our txtField; monitors when text changes
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        doneBtn.isHidden = true //makes doneBtn hidden from the beginning
     }
     
     @objc func textFieldDidChange() {
@@ -56,12 +62,36 @@ class CreateGroupsVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         return emailArray.count //takes the count of emailArray
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell { //emails in the rows for the search Query
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "userCell")  as? UserCell else { return UITableViewCell() }
         let profileimg = UIImage(named: "defaultProfileImage")
         
-        cell.configureCell(profileImg: profileimg!, email: emailArray[indexPath.row], isSelected: true) //pulls the email from the proper row
+        if chosenUserArray.contains(emailArray[indexPath.row]){ //to check if we have already tapped on a member to be added to the array
+            cell.configureCell(profileImg: profileimg!, email: emailArray[indexPath.row], isSelected: true) //pulls the email from the proper row
+        } else { //if they're not in array
+            cell.configureCell(profileImg: profileimg!, email: emailArray[indexPath.row], isSelected: false) //sets the checkmark to be hidden
+        }
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? UserCell else { return } //cell for row lets us get the cell and add it to our value
+        
+        if !chosenUserArray.contains(cell.emailLbl.text!) { //to check whether the user Array has the email already inside; (!) means does not
+            chosenUserArray.append(cell.emailLbl.text!)
+            groupMemberLbl.text = chosenUserArray.joined(separator: ", ") //adds the emails, with a comma , in between
+            doneBtn.isHidden = false //donebtn shows if we add a user
+        } else {
+            chosenUserArray = chosenUserArray.filter({ $0 != cell.emailLbl.text! }) //filter is like a forloop, it filters the array, you can use $0 as a temporary variable; returns everybody who is not = to emailLbl.text
+            
+            if chosenUserArray.count >= 1 { //if there's atleast one person in the array
+                groupMemberLbl.text = chosenUserArray.joined(separator: ", ")
+            } else { //if there are 0 members in the array
+                groupMemberLbl.text = "add people to your group"
+                doneBtn.isHidden = true //hides the doneBtn if we remove all users from the array
+            }
+        }
     }
     
 }
