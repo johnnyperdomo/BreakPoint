@@ -102,10 +102,31 @@ class DataService {
             
             handler(emailArray)
         }
-        
-        
     }
     
+    func getIDs(forUsernames usernames: [String], handler: @escaping (_ uidArray: [String]) -> ()) { //to gets ids from the emails
+        
+        var idArray = [String]()
+        
+        REF_USERS.observeSingleEvent(of: .value) { (userSnapshot) in
+            guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            
+            for user in userSnapshot {
+                let email = user.childSnapshot(forPath: "email").value as! String
+                
+                if usernames.contains(email) { //if it contains an email
+                    idArray.append(user.key) //append their id to idArray
+                }
+            }
+            handler(idArray)
+        }
+    }
+    
+    //to successfully create a group with members...and send it to firebase later
+    func createGroup(withTitle title: String, andDescription description: String, forUserIds ids: [String], handler: @escaping (_ groupCreated: Bool) -> ()) {
+        REF_GROUPS.childByAutoId().updateChildValues(["title": title, "description": description, "members": ids]) //make a dictionary to store groups data
+        handler(true)
+    }
     
 }
 

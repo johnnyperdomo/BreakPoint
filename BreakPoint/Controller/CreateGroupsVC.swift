@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CreateGroupsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
@@ -47,6 +48,23 @@ class CreateGroupsVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
 
     @IBAction func doneBtnPressed(_ sender: Any) {
+        if titleTxtField.text != "" && descTextField.text != "" { //if these two fields are not empty...
+            DataService.instance.getIDs(forUsernames: chosenUserArray) { (idsArray) in //usernames are picked from the chosenUserArray that gets filled when we pick members
+                
+                var userIds = idsArray //temporary variable that holds the idsArray
+                userIds.append((Auth.auth().currentUser?.uid)!) //add ourselves to the group.
+                
+                DataService.instance.createGroup(withTitle: self.titleTxtField.text!, andDescription: self.descTextField.text!, forUserIds: userIds, handler: { (groupCreated) in
+                    
+                    if groupCreated { //if the group is created successfully
+                        self.dismiss(animated: true, completion: nil) //dismiss VC
+                    } else {
+                        print("group couldn't be created")
+                    }
+                    
+                })
+            }
+        }
     }
     
     @IBAction func closeBtnPressed(_ sender: Any) {
