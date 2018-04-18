@@ -178,14 +178,51 @@
                                 <rect key="frame" x="0.0" y="70" width="375" height="548"/>
                                 <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="IPc-jQ-HzL">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" rowHeight="110" id="IPc-jQ-HzL" customClass="GroupCell" customModule="BreakPoint" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IPc-jQ-HzL" id="qBh-ym-DCT">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Group Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5K-d5-DqU">
+                                                    <rect key="frame" x="15" y="60.5" width="352" height="16.5"/>
+                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                                    <color key="textColor" red="0.42027367879999999" green="0.87843892749999997" blue="0.77265161660000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Group Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUe-oR-gMb">
+                                                    <rect key="frame" x="8" y="8" width="359" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="18"/>
+                                                    <color key="textColor" red="0.42027367879999999" green="0.87843892749999997" blue="0.77265161660000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Members" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhS-4x-c4O">
+                                                    <rect key="frame" x="15" y="85" width="352" height="16.5"/>
+                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                                    <color key="textColor" red="0.42027367879999999" green="0.87843892749999997" blue="0.77265161660000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="LUe-oR-gMb" firstAttribute="leading" secondItem="qBh-ym-DCT" secondAttribute="leading" constant="8" id="DM0-4r-t0X"/>
+                                                <constraint firstItem="z5K-d5-DqU" firstAttribute="top" secondItem="LUe-oR-gMb" secondAttribute="bottom" constant="8" id="Imv-iJ-o3e"/>
+                                                <constraint firstAttribute="trailing" secondItem="uhS-4x-c4O" secondAttribute="trailing" constant="8" id="NVl-eH-L5R"/>
+                                                <constraint firstItem="z5K-d5-DqU" firstAttribute="leading" secondItem="qBh-ym-DCT" secondAttribute="leading" constant="15" id="NjJ-ce-CEU"/>
+                                                <constraint firstAttribute="bottom" secondItem="uhS-4x-c4O" secondAttribute="bottom" constant="8" id="RvG-e2-0Cp"/>
+                                                <constraint firstAttribute="trailing" secondItem="LUe-oR-gMb" secondAttribute="trailing" constant="8" id="ZCv-tO-d5k"/>
+                                                <constraint firstItem="uhS-4x-c4O" firstAttribute="leading" secondItem="qBh-ym-DCT" secondAttribute="leading" constant="15" id="bNJ-Sn-7PU"/>
+                                                <constraint firstItem="LUe-oR-gMb" firstAttribute="top" secondItem="qBh-ym-DCT" secondAttribute="top" constant="8" id="dyi-Yf-Upn"/>
+                                                <constraint firstItem="uhS-4x-c4O" firstAttribute="top" secondItem="z5K-d5-DqU" secondAttribute="bottom" constant="8" id="jPa-4d-jT7"/>
+                                                <constraint firstAttribute="trailing" secondItem="z5K-d5-DqU" secondAttribute="trailing" constant="8" id="uCU-Bk-YRJ"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="groupDescLbl" destination="z5K-d5-DqU" id="8H2-JE-mFl"/>
+                                            <outlet property="groupTitleLbl" destination="LUe-oR-gMb" id="ozN-Lo-dca"/>
+                                            <outlet property="memberCountLbl" destination="uhS-4x-c4O" id="6SV-3G-0xO"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -203,10 +240,13 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Groups" image="groups-tabIcon" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="groupsTableView" destination="64r-YD-oM4" id="YHA-SY-F2g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="749.60000000000002" y="359.37031484257875"/>
         </scene>
         <!--Create GroupsVC-->
         <scene sceneID="RFv-sc-PDV">
