@@ -17,6 +17,7 @@
 		FE3A6513207934EA00C1292E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE3A6512207934EA00C1292E /* Assets.xcassets */; };
 		FE3A6516207934EA00C1292E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE3A6514207934EA00C1292E /* LaunchScreen.storyboard */; };
 		FE3A652320794D6800C1292E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE3A652220794D6800C1292E /* GoogleService-Info.plist */; };
+		FE4110CB2087F97800F69FF4 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4110CA2087F97800F69FF4 /* Group.swift */; };
 		FE5D0250207C3524000277AB /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5D024F207C3524000277AB /* MeVC.swift */; };
 		FE65E3B02079A598007E3EB8 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE65E3AF2079A598007E3EB8 /* AuthVC.swift */; };
 		FE65E3B22079A5D0007E3EB8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE65E3B12079A5D0007E3EB8 /* LoginVC.swift */; };
@@ -46,6 +47,7 @@
 		FE3A6515207934EA00C1292E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE3A6517207934EA00C1292E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE3A652220794D6800C1292E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FE4110CA2087F97800F69FF4 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		FE5D024F207C3524000277AB /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
 		FE65E3AF2079A598007E3EB8 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		FE65E3B12079A5D0007E3EB8 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				FEA472ED208035A900D234FB /* Message.swift */,
+				FE4110CA2087F97800F69FF4 /* Group.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				FE65E3B22079A5D0007E3EB8 /* LoginVC.swift in Sources */,
 				FE8690ED207AF36300D5F00B /* AuthService.swift in Sources */,
 				FE3A650A207934E900C1292E /* AppDelegate.swift in Sources */,
+				FE4110CB2087F97800F69FF4 /* Group.swift in Sources */,
 				FE7C69EC20853951006FBC26 /* UserCell.swift in Sources */,
 				FE65E3B62079AB2A007E3EB8 /* ShadowView.swift in Sources */,
 				FEA472EE208035A900D234FB /* Message.swift in Sources */,

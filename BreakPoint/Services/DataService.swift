@@ -128,6 +128,31 @@ class DataService {
         handler(true)
     }
     
+    //to pull all the groups from firebase
+    func getAllGroups(handler: @escaping (_ groupsArray: [Group]) -> ()) { //this pulls an array of our Group model, we can pass this Group back to view controller
+        var groupsArray = [Group]() //array of type group
+        
+        REF_GROUPS.observeSingleEvent(of: .value) { (groupSnapshot) in
+            guard let groupSnapshot = groupSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            
+            for group in groupSnapshot {
+                let memberArray = group.childSnapshot(forPath: "members").value as! [String] //gets an array
+                
+                if memberArray.contains((Auth.auth().currentUser?.uid)!) { //if this group contains us; move forward
+                    let title = group.childSnapshot(forPath: "title").value as! String //variables for the member attributes
+                    let description = group.childSnapshot(forPath: "description").value as! String
+                    
+                    let group = Group(title: title, description: description, key: group.key, memberCount: memberArray.count, members: memberArray) //pulls from firebase
+                    
+                    groupsArray.append(group) //add it the array
+                }
+            }
+            
+            handler(groupsArray) //complete
+        }
+    }
+    
+    
 }
 
 
