@@ -18,6 +18,25 @@ class GroupFeedVC: UIViewController {
     @IBOutlet weak var sendBtn: UIButton!
     
     
+    var group: Group? //to hold the data for the group; optional just in case we dont have a value
+    
+    func initGroupData(forGroup group: Group) {
+        self.group = group
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) { //to be able to pass in groups data to another view
+        super.viewWillAppear(animated)
+        
+        groupTitleLbl.text = group?.groupTitle //accesses Group Data model to get the correct data
+        DataService.instance.getEmailsFor(group: group!) { (returnedEmails) in //this func turns ids into emails
+            self.membersLbl.text = returnedEmails.joined(separator: ", ") //Array, separate it with comma
+        }
+        
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         sendBtnView.bindToKeyboard() //binds to keyboard

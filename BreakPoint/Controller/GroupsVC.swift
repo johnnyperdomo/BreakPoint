@@ -52,5 +52,13 @@ class GroupsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { //present a custom thing when we tap on a row
+        guard let groupFeedVC = storyboard?.instantiateViewController(withIdentifier: "GroupFeedVC") as? GroupFeedVC else { return } //to move between view controllers
+        groupFeedVC.initGroupData(forGroup: groupsArray[indexPath.row]) //initializes some Group data and passes it into this VC
+        present(groupFeedVC, animated: true, completion: nil)
+    }
+    
+    
+    
 }
 
