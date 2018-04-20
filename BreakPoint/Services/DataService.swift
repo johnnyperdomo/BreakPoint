@@ -60,7 +60,8 @@ class DataService {
     func uploadPost(withMessage message: String, forUID uid: String, withGroupKey groupKey: String?, sendComplete: @escaping (_ status: Bool) -> ()) { //upload a post to the feed and add it to the firebase Database //'groupkey' is whether its being posted in group or public feed
         
         if groupKey != nil { //if there is a group key
-        //send to groups ref
+            REF_GROUPS.child(groupKey!).child("messages").childByAutoId().updateChildValues(["content": message, "senderId": uid]) //create a group key, then create a messages child and create an id for it; create a dictionary
+            sendComplete(true)
         } else { //if it doesn't have a group key, post into the public feed
             REF_FEED.childByAutoId().updateChildValues(["content": message, "senderID": uid]) //childByAutoId() gives each message a custom random ID// each message needs content and a sender id
             sendComplete(true)
@@ -85,6 +86,29 @@ class DataService {
             handler(messageArray) //calls message array
         }
     }
+    
+    
+    func getAllMessagesFor(desiredGroup: Group, handler: @escaping (_ messagesArray: [Message]) -> ()) { //to get the messages for the specific group 
+        var groupMessageArray = [Message]()
+        
+        REF_GROUPS.child(desiredGroup.key).child("messages").observeSingleEvent(of: .value) { (groupMessageSnapshot) in //in the desired group -> in the messages -> get values
+            guard let groupMessageSnapshot = groupMessageSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            
+            for groupMessage in groupMessageSnapshot {
+                let content = groupMessage.childSnapshot(forPath: "content").value as! String
+                let senderId = groupMessage.childSnapshot(forPath: "senderId").value as! String
+                let groupMessage = Message(content: content, senderId: senderId) //create message object
+                groupMessageArray.append(groupMessage) //append it
+            }
+            
+            handler(groupMessageArray)
+        }
+        
+    }
+    
+    
+    
+    
     
     func getEmail(forSearchQuery query: String, handler: @escaping (_ emailArray: [String]) -> ()) { //func to find emails by search
         var emailArray = [String]() //array of type email

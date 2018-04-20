@@ -57,7 +57,7 @@
                                 <rect key="frame" x="0.0" y="70" width="375" height="548"/>
                                 <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="100" id="BpE-bO-djC" customClass="FeedCell" customModule="BreakPoint" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="100" id="BpE-bO-djC" customClass="FeedCell" customModule="BreakPoint" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BpE-bO-djC" id="bDi-dp-h1B">
@@ -178,7 +178,7 @@
                                 <rect key="frame" x="0.0" y="70" width="375" height="548"/>
                                 <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" rowHeight="110" id="IPc-jQ-HzL" customClass="GroupCell" customModule="BreakPoint" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" rowHeight="110" id="IPc-jQ-HzL" customClass="GroupCell" customModule="BreakPoint" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IPc-jQ-HzL" id="qBh-ym-DCT">
@@ -288,10 +288,10 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ggz-3g-fr8">
-                                <rect key="frame" x="0.0" y="103" width="375" height="564"/>
+                                <rect key="frame" x="0.0" y="103" width="375" height="504"/>
                                 <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupFeedCell" rowHeight="100" id="3Em-9u-s57" customClass="GroupFeedCell" customModule="BreakPoint" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupFeedCell" rowHeight="100" id="3Em-9u-s57" customClass="GroupFeedCell" customModule="BreakPoint" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Em-9u-s57" id="fNs-TK-zMz">
@@ -337,6 +337,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
+                                            <outlet property="contentLbl" destination="ntV-WO-Kuy" id="dU0-6q-K7G"/>
                                             <outlet property="emailLbl" destination="xt8-TH-04j" id="KSN-zx-iXH"/>
                                             <outlet property="profileImg" destination="Y37-JX-OSg" id="SRN-yQ-r0e"/>
                                         </connections>
@@ -388,12 +389,12 @@
                         <constraints>
                             <constraint firstItem="CDF-WX-Pqv" firstAttribute="trailing" secondItem="Nax-9g-zKc" secondAttribute="trailing" id="24I-S0-GEn"/>
                             <constraint firstItem="fX3-2S-NRJ" firstAttribute="top" secondItem="CDF-WX-Pqv" secondAttribute="bottom" constant="8" id="9UM-C7-Hb1"/>
+                            <constraint firstItem="gkJ-mL-wtP" firstAttribute="top" secondItem="ggz-3g-fr8" secondAttribute="bottom" id="Beg-Ru-3P1"/>
                             <constraint firstItem="ggz-3g-fr8" firstAttribute="top" secondItem="fX3-2S-NRJ" secondAttribute="bottom" constant="8" id="Fdp-kn-ip1"/>
                             <constraint firstItem="CDF-WX-Pqv" firstAttribute="top" secondItem="8iS-uL-IPk" secondAttribute="top" id="IKe-U4-T9o"/>
                             <constraint firstItem="Nax-9g-zKc" firstAttribute="trailing" secondItem="fX3-2S-NRJ" secondAttribute="trailing" constant="20" id="IOW-Wi-n1m"/>
                             <constraint firstItem="gkJ-mL-wtP" firstAttribute="bottom" secondItem="Nax-9g-zKc" secondAttribute="bottom" id="JsP-EC-Fe9"/>
                             <constraint firstItem="gkJ-mL-wtP" firstAttribute="leading" secondItem="Nax-9g-zKc" secondAttribute="leading" id="Ogd-o7-zSz"/>
-                            <constraint firstItem="Nax-9g-zKc" firstAttribute="bottom" secondItem="ggz-3g-fr8" secondAttribute="bottom" id="SbT-Pp-5aa"/>
                             <constraint firstItem="ggz-3g-fr8" firstAttribute="trailing" secondItem="Nax-9g-zKc" secondAttribute="trailing" id="TPM-jV-7pL"/>
                             <constraint firstItem="gkJ-mL-wtP" firstAttribute="trailing" secondItem="Nax-9g-zKc" secondAttribute="trailing" id="U64-xu-s4w"/>
                             <constraint firstItem="fX3-2S-NRJ" firstAttribute="leading" secondItem="Nax-9g-zKc" secondAttribute="leading" constant="20" id="e35-IJ-2sU"/>
@@ -540,13 +541,13 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user@breakpoint" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="meB-6A-8Mh">
-                                                            <rect key="frame" x="83" y="21" width="489" height="18"/>
+                                                            <rect key="frame" x="83" y="21" width="197" height="18"/>
                                                             <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
                                                             <color key="textColor" red="0.0025180000500000001" green="0.88678234639999998" blue="0.0039069063429999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteCheckmark" translatesAutoresizingMaskIntoConstraints="NO" id="0Ax-tb-gyB">
-                                                            <rect key="frame" x="582" y="11" width="20" height="38"/>
+                                                            <rect key="frame" x="290" y="11" width="20" height="38"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="20" id="7nm-Dm-9vq"/>
                                                             </constraints>
@@ -791,7 +792,7 @@
                                 <rect key="frame" x="0.0" y="345" width="375" height="273"/>
                                 <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="a8o-ly-rDn">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="a8o-ly-rDn">
                                         <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a8o-ly-rDn" id="XhS-v9-AjZ">
