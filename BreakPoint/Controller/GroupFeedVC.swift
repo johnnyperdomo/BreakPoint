@@ -35,15 +35,14 @@ class GroupFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             self.membersLbl.text = returnedEmails.joined(separator: ", ") //Array, separate it with comma
         }
         
+        self.tableView.estimatedRowHeight = 0
+        self.tableView.estimatedSectionHeaderHeight = 0
+        self.tableView.estimatedSectionFooterHeight = 0
+        
         DataService.instance.REF_GROUPS.observe(.value) { (snapshot) in //if there are any changes, observe them, and implement them here
             DataService.instance.getAllMessagesFor(desiredGroup: self.group!, handler: { (returnedGroupMessages) in
                 self.groupMessages = returnedGroupMessages
                 self.tableView.reloadData()
-                
-                
-                self.tableView.estimatedRowHeight = 0
-                self.tableView.estimatedSectionHeaderHeight = 0
-                self.tableView.estimatedSectionFooterHeight = 0
                 
                 if self.groupMessages.count > 0 { //there has to be atleast one message in the group
                     self.tableView.scrollToRow(at: IndexPath(row: self.groupMessages.count - 1, section: 0), at: .none, animated: true) //tableView scrolls to latest message; row goes to bottom of the messages depending on number of messages... -1 becuase array indexing starts at 0 but .count starts at 1
@@ -64,7 +63,7 @@ class GroupFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
 
     @IBAction func backBtnPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        dismissDetail() //dismissed the VC with a custom animation
     }
     
     @IBAction func sendBtnPressed(_ sender: Any) {
@@ -104,18 +103,6 @@ class GroupFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         }
         return cell
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 }
