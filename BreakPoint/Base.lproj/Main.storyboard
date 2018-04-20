@@ -405,6 +405,7 @@
                     </view>
                     <connections>
                         <outlet property="groupTitleLbl" destination="Ol5-7b-QMn" id="WPs-aj-qOh"/>
+                        <outlet property="mainView" destination="8iS-uL-IPk" id="0Qd-Sz-V0i"/>
                         <outlet property="membersLbl" destination="fX3-2S-NRJ" id="tw3-yG-d7A"/>
                         <outlet property="messageTxtField" destination="w8B-86-HAc" id="osD-Wj-yf3"/>
                         <outlet property="sendBtn" destination="as8-LU-tHM" id="PCx-H1-Nbt"/>
@@ -663,7 +664,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Say something here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cJS-Mc-sVM">
-                                <rect key="frame" x="20" y="170" width="335" height="427"/>
+                                <rect key="frame" x="20" y="370" width="335" height="227"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" red="0.42027367879999999" green="0.87843892749999997" blue="0.77265161660000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
@@ -686,26 +687,27 @@
                         </subviews>
                         <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="yfd-GT-xh0" firstAttribute="leading" secondItem="weH-3h-6pP" secondAttribute="leading" id="5WN-ku-5a7"/>
                             <constraint firstItem="weH-3h-6pP" firstAttribute="trailing" secondItem="4H9-ev-hMI" secondAttribute="trailing" constant="20" id="AU6-af-n9L"/>
                             <constraint firstItem="4H9-ev-hMI" firstAttribute="centerY" secondItem="dW3-Ko-17T" secondAttribute="centerY" id="DIH-Xj-QeE"/>
+                            <constraint firstItem="yfd-GT-xh0" firstAttribute="bottom" secondItem="weH-3h-6pP" secondAttribute="bottom" id="GVt-yE-HL8"/>
+                            <constraint firstItem="yfd-GT-xh0" firstAttribute="trailing" secondItem="weH-3h-6pP" secondAttribute="trailing" id="LAn-Yn-DWc"/>
                             <constraint firstItem="4H9-ev-hMI" firstAttribute="leading" secondItem="dW3-Ko-17T" secondAttribute="trailing" constant="20" id="Rea-UA-gHx"/>
                             <constraint firstItem="Mzp-sf-NPt" firstAttribute="leading" secondItem="weH-3h-6pP" secondAttribute="leading" id="RrZ-l8-F54"/>
                             <constraint firstItem="dW3-Ko-17T" firstAttribute="leading" secondItem="weH-3h-6pP" secondAttribute="leading" constant="20" id="Uuv-73-z6M"/>
-                            <constraint firstItem="yfd-GT-xh0" firstAttribute="trailing" secondItem="weH-3h-6pP" secondAttribute="trailing" id="VvM-wu-YHS"/>
-                            <constraint firstItem="yfd-GT-xh0" firstAttribute="top" secondItem="cJS-Mc-sVM" secondAttribute="bottom" constant="20" id="WBX-LA-Q8S"/>
+                            <constraint firstItem="cJS-Mc-sVM" firstAttribute="top" secondItem="dW3-Ko-17T" secondAttribute="bottom" constant="220" id="ch9-KK-9qN"/>
+                            <constraint firstItem="yfd-GT-xh0" firstAttribute="top" secondItem="cJS-Mc-sVM" secondAttribute="bottom" constant="20" id="dCj-BT-atd"/>
                             <constraint firstItem="weH-3h-6pP" firstAttribute="trailing" secondItem="cJS-Mc-sVM" secondAttribute="trailing" constant="20" id="egf-VW-m1m"/>
                             <constraint firstItem="dW3-Ko-17T" firstAttribute="top" secondItem="Mzp-sf-NPt" secondAttribute="bottom" constant="20" id="fRw-LE-g62"/>
                             <constraint firstItem="cJS-Mc-sVM" firstAttribute="leading" secondItem="weH-3h-6pP" secondAttribute="leading" constant="20" id="fWa-EH-irs"/>
-                            <constraint firstItem="weH-3h-6pP" firstAttribute="bottom" secondItem="yfd-GT-xh0" secondAttribute="bottom" id="ie9-oU-gRd"/>
+                            <constraint firstItem="yfd-GT-xh0" firstAttribute="leading" secondItem="weH-3h-6pP" secondAttribute="leading" id="ima-fT-ozu"/>
                             <constraint firstItem="Mzp-sf-NPt" firstAttribute="trailing" secondItem="weH-3h-6pP" secondAttribute="trailing" id="wx4-g6-eHP"/>
                             <constraint firstItem="Mzp-sf-NPt" firstAttribute="top" secondItem="zVL-f0-lZC" secondAttribute="top" id="xm8-ry-YQG"/>
-                            <constraint firstItem="cJS-Mc-sVM" firstAttribute="top" secondItem="dW3-Ko-17T" secondAttribute="bottom" constant="20" id="yda-EP-ktE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="weH-3h-6pP"/>
                     </view>
                     <connections>
                         <outlet property="emailLbl" destination="4H9-ev-hMI" id="lph-sW-xjT"/>
+                        <outlet property="mainView" destination="zVL-f0-lZC" id="pWK-Wj-wiS"/>
                         <outlet property="profileImg" destination="dW3-Ko-17T" id="8SM-QE-PCZ"/>
                         <outlet property="sendBtn" destination="yfd-GT-xh0" id="xB9-rZ-4ln"/>
                         <outlet property="textView" destination="cJS-Mc-sVM" id="urc-hM-pSF"/>

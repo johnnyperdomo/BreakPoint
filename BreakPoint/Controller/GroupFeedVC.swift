@@ -17,6 +17,7 @@ class GroupFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet weak var sendBtnView: UIView!
     @IBOutlet weak var messageTxtField: InsetTextField!
     @IBOutlet weak var sendBtn: UIButton!
+    @IBOutlet var mainView: UIView!
     
     
     var group: Group? //to hold the data for the group; optional just in case we dont have a value
@@ -57,7 +58,7 @@ class GroupFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sendBtnView.bindToKeyboard() //binds to keyboard
+        mainView.bindToKeyboard() //binds to keyboard
         tableView.delegate = self
         tableView.dataSource = self
     }

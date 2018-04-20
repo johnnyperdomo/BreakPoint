@@ -15,13 +15,14 @@ class CreatePostVC: UIViewController {
     @IBOutlet weak var emailLbl: UILabel!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var sendBtn: UIButton!
+    @IBOutlet var mainView: UIView!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         textView.delegate = self
-        sendBtn.bindToKeyboard()
+        mainView.bindToKeyboard()
     }
     
     override func viewWillAppear(_ animated: Bool) { //update the changes, view will appear
