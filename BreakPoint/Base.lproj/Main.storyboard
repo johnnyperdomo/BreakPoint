@@ -934,6 +934,7 @@
                         <viewLayoutGuide key="safeArea" id="IyC-B9-nav"/>
                     </view>
                     <connections>
+                        <outlet property="doneBtn" destination="Uak-cB-DNU" id="NHz-fX-m0o"/>
                         <outlet property="textView" destination="La4-uk-JQm" id="uMI-2h-CTP"/>
                     </connections>
                 </viewController>

@@ -21,6 +21,7 @@ class DataService {
     private var _REF_USERS = DB_BASE.child("users") //used to save users into their own folder in firebase;
     private var _REF_GROUPS = DB_BASE.child("groups")
     private var _REF_FEED = DB_BASE.child("feed")
+    private var _REF_BIO = DB_BASE.child("biographies")
     
     
     //we use these regular variables to be able to access the data later on...since they are not private
@@ -40,6 +41,9 @@ class DataService {
         return _REF_FEED
     }
     
+    var REF_BIO: DatabaseReference {
+        return _REF_BIO
+    }
     func createDBUser(uid: String, userData: Dictionary<String, Any>) { //func to get users and push that data into FireBase to make a database; user-identification-id(uid)
         REF_USERS.child(uid).updateChildValues(userData) // make a firebase user
     }
@@ -165,12 +169,16 @@ class DataService {
     }
     
     
-    
-    
     //to successfully create a group with members...and send it to firebase later
     func createGroup(withTitle title: String, andDescription description: String, forUserIds ids: [String], handler: @escaping (_ groupCreated: Bool) -> ()) {
         REF_GROUPS.childByAutoId().updateChildValues(["title": title, "description": description, "members": ids]) //make a dictionary to store groups data
         handler(true)
+    }
+    
+    //to create a biography for the user
+    func createBiography(withText text: String, forUID id: String, complete: @escaping (_ status: Bool) -> ()) {
+        REF_BIO.childByAutoId().updateChildValues(["Biography": text, "user": id]) //dictionary
+        complete(true)
     }
     
     //to pull all the groups from firebase
