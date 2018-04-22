@@ -32,6 +32,7 @@
 		FE96131C207EBAC4002FC0C7 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE96131B207EBAC4002FC0C7 /* UIViewExt.swift */; };
 		FEA472EC2080331A00D234FB /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA472EB2080331A00D234FB /* FeedCell.swift */; };
 		FEA472EE208035A900D234FB /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA472ED208035A900D234FB /* Message.swift */; };
+		FEC5D791208C2EAA009C2C7B /* UpdateBioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5D790208C2EAA009C2C7B /* UpdateBioVC.swift */; };
 		FEEBDB9B2079509C00626425 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEBDB9A2079509C00626425 /* DataService.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		FE96131B207EBAC4002FC0C7 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		FEA472EB2080331A00D234FB /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		FEA472ED208035A900D234FB /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		FEC5D790208C2EAA009C2C7B /* UpdateBioVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBioVC.swift; sourceTree = "<group>"; };
 		FEEBDB9A2079509C00626425 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,6 +146,7 @@
 				FE83B151207D6C8700DE048A /* CreatePostVC.swift */,
 				FE22E4572084311400D46619 /* CreateGroupsVC.swift */,
 				FE6DDCD62088FF77000D4C95 /* GroupFeedVC.swift */,
+				FEC5D790208C2EAA009C2C7B /* UpdateBioVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				FE7C69EC20853951006FBC26 /* UserCell.swift in Sources */,
 				FE65E3B62079AB2A007E3EB8 /* ShadowView.swift in Sources */,
 				FEA472EE208035A900D234FB /* Message.swift in Sources */,
+				FEC5D791208C2EAA009C2C7B /* UpdateBioVC.swift in Sources */,
 				FE83B152207D6C8700DE048A /* CreatePostVC.swift in Sources */,
 				FE22E4582084311400D46619 /* CreateGroupsVC.swift in Sources */,
 				FE3A650C207934E900C1292E /* FeedsVC.swift in Sources */,

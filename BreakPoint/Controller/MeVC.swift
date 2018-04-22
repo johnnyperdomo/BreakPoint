@@ -15,6 +15,7 @@ class MeVC: UIViewController {
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var emailLbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,14 @@ class MeVC: UIViewController {
         super.viewWillAppear(animated)
         self.emailLbl.text = Auth.auth().currentUser?.email //matches the emailLbl
     }
+    
+    
+    @IBAction func updateBioBtnPressed(_ sender: Any) {
+        let updateBioVC = storyboard?.instantiateViewController(withIdentifier: "updateBioVC")
+        present(updateBioVC!, animated: true, completion: nil)
+        
+    }
+    
     
     @IBAction func signOutBtnPressed(_ sender: Any) { //used to sign out the app
         let logoutPopUp = UIAlertController(title: "Logout?", message: "Are you sure you want to log out?", preferredStyle: .actionSheet) //puts an alert on screen
