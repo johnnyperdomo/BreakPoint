@@ -20,6 +20,7 @@ class UpdateBioVC: UIViewController, UITextViewDelegate {
         doneBtn.isHidden = true
     }
 
+    
     @IBAction func doneBtnPressed(_ sender: Any) {
         DataService.instance.createBiography(withText: textView.text, forUID: (Auth.auth().currentUser?.uid)!) { (success) in
             

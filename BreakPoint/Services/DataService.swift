@@ -111,7 +111,23 @@ class DataService {
     }
     
     
-    
+    func getBiographies(forUserId id: String, handler: @escaping (_ userId: String) -> ()) {
+        var biographyText = String()
+        
+        REF_BIO.observeSingleEvent(of: .value) { (userSnapshot) in
+            guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            
+            for user in userSnapshot {
+                let userId = user.childSnapshot(forPath: "user").value as! String
+                let biography = user.childSnapshot(forPath: "Biography").value as! String
+                
+                if userId == id {
+                    biographyText.append(biography)
+                }
+            }
+            handler(biographyText)
+        }
+    }
     
     
     func getEmail(forSearchQuery query: String, handler: @escaping (_ emailArray: [String]) -> ()) { //func to find emails by search

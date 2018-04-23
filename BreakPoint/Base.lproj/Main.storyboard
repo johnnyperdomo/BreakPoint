@@ -848,6 +848,7 @@
                         <outlet property="emailLbl" destination="Sw7-pl-YzR" id="Nhj-JE-brX"/>
                         <outlet property="profileImg" destination="0d1-Gr-Cep" id="trY-JL-AFi"/>
                         <outlet property="tableView" destination="ITo-5q-pco" id="bf6-1K-2xv"/>
+                        <outlet property="updateBioLbl" destination="I3S-7v-caW" id="Kjz-oz-Bys"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zjX-3u-Ube" userLabel="First Responder" sceneMemberID="firstResponder"/>

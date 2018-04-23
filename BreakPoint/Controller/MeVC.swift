@@ -11,20 +11,32 @@ import Firebase
 
 class MeVC: UIViewController {
 
-    
+
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var emailLbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var updateBioLbl: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+       
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.emailLbl.text = Auth.auth().currentUser?.email //matches the emailLbl
+        
+        DataService.instance.getBiographies(forUserId: (Auth.auth().currentUser?.uid)!) { (returnedBiographies) in //downloads biography message
+            self.updateBioLbl.text = returnedBiographies //sets the downloaded biography message as the biography label
+        }
+        
+        
     }
+    
+    
     
     
     @IBAction func updateBioBtnPressed(_ sender: Any) {
