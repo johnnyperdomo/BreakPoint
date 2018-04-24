@@ -813,33 +813,15 @@
                                     <constraint firstAttribute="trailing" secondItem="Sw7-pl-YzR" secondAttribute="trailing" constant="65" id="w6e-RF-Xvi"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ITo-5q-pco">
-                                <rect key="frame" x="0.0" y="345" width="375" height="273"/>
-                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="a8o-ly-rDn">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a8o-ly-rDn" id="XhS-v9-AjZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="DxQ-Qq-utd" firstAttribute="trailing" secondItem="ITo-5q-pco" secondAttribute="trailing" id="0Tb-zC-vRM"/>
                             <constraint firstItem="I9w-7P-QkD" firstAttribute="leading" secondItem="DxQ-Qq-utd" secondAttribute="leading" id="5YG-Tl-fUQ"/>
-                            <constraint firstItem="ITo-5q-pco" firstAttribute="leading" secondItem="DxQ-Qq-utd" secondAttribute="leading" id="Nkp-Mi-iTZ"/>
                             <constraint firstItem="jr1-6U-ycc" firstAttribute="trailing" secondItem="DxQ-Qq-utd" secondAttribute="trailing" id="QiF-kj-Bdf"/>
                             <constraint firstItem="jr1-6U-ycc" firstAttribute="top" secondItem="I9w-7P-QkD" secondAttribute="bottom" id="gfL-B0-nY5"/>
                             <constraint firstItem="I9w-7P-QkD" firstAttribute="trailing" secondItem="DxQ-Qq-utd" secondAttribute="trailing" id="mXp-9u-hmn"/>
                             <constraint firstItem="I9w-7P-QkD" firstAttribute="top" secondItem="Xzm-de-MET" secondAttribute="top" id="qRM-r6-0tY"/>
-                            <constraint firstItem="DxQ-Qq-utd" firstAttribute="bottom" secondItem="ITo-5q-pco" secondAttribute="bottom" id="ul5-BN-11O"/>
                             <constraint firstItem="jr1-6U-ycc" firstAttribute="leading" secondItem="DxQ-Qq-utd" secondAttribute="leading" id="vjQ-s9-9XB"/>
-                            <constraint firstItem="ITo-5q-pco" firstAttribute="top" secondItem="jr1-6U-ycc" secondAttribute="bottom" id="xPU-t5-AZq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DxQ-Qq-utd"/>
                     </view>
@@ -847,7 +829,6 @@
                     <connections>
                         <outlet property="emailLbl" destination="Sw7-pl-YzR" id="Nhj-JE-brX"/>
                         <outlet property="profileImg" destination="0d1-Gr-Cep" id="trY-JL-AFi"/>
-                        <outlet property="tableView" destination="ITo-5q-pco" id="bf6-1K-2xv"/>
                         <outlet property="updateBioLbl" destination="I3S-7v-caW" id="Kjz-oz-Bys"/>
                     </connections>
                 </viewController>
