@@ -27,14 +27,4 @@ class AuthVC: UIViewController {
         present(loginVC!, animated: true, completion: nil) //go to the loginVC
     }
     
-    @IBAction func googleSignInBtnPressed(_ sender: Any) {
-       
-    }
-  
-    
-    @IBAction func facebookSignInBtnPressed(_ sender: Any) {
-        
-    }
-    
-    
 }

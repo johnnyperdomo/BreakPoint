@@ -947,50 +947,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJt-nf-sCK" customClass="ShadowView" customModule="BreakPoint" customModuleProvider="target">
                                 <rect key="frame" x="16" y="154.5" width="343" height="358"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JFg-jZ-m8N">
-                                        <rect key="frame" x="20" y="20" width="303" height="278"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spa-M4-BHB">
-                                                <rect key="frame" x="0.0" y="0.0" width="303" height="62"/>
-                                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
-                                                <color key="textColor" red="0.42027367875406829" green="0.8784389274979606" blue="0.77265161663388382" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cR9-J4-huO">
-                                                <rect key="frame" x="0.0" y="72" width="303" height="62"/>
-                                                <color key="backgroundColor" red="0.2627450980392157" green="0.35686274509803922" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="LOGIN WITH FB">
-                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="facebookSignInBtnPressed:" destination="AdM-jo-wUC" eventType="touchUpInside" id="Gwf-f0-wR8"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ye4-qa-eml">
-                                                <rect key="frame" x="0.0" y="144" width="303" height="62"/>
-                                                <color key="backgroundColor" red="1" green="0.1647202152502345" blue="0.073939081861317146" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="LOGIN WITH G+">
-                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="googleSignInBtnPressed:" destination="AdM-jo-wUC" eventType="touchUpInside" id="q7R-17-3h1"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QC4-V8-mCN">
-                                                <rect key="frame" x="0.0" y="216" width="303" height="62"/>
-                                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
-                                                <color key="textColor" red="0.42027367875406829" green="0.8784389274979606" blue="0.77265161663388382" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spa-M4-BHB">
+                                        <rect key="frame" x="20" y="40" width="303" height="28"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="24"/>
+                                        <color key="textColor" red="0.42027367875406829" green="0.8784389274979606" blue="0.77265161663388382" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQ8-f8-cbc">
-                                        <rect key="frame" x="20" y="298" width="303" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="82e-tA-82u"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
-                                        <state key="normal" title=" by email" image="emailIcon">
+                                        <rect key="frame" x="20" y="168" width="303" height="90"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="24"/>
+                                        <state key="normal" title=" By Email" image="emailIcon">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -1001,14 +968,14 @@
                                 <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="2oW-8z-n43"/>
-                                    <constraint firstAttribute="trailing" secondItem="JFg-jZ-m8N" secondAttribute="trailing" constant="20" id="Cs4-IP-ZVv"/>
+                                    <constraint firstItem="spa-M4-BHB" firstAttribute="leading" secondItem="hJt-nf-sCK" secondAttribute="leading" constant="20" id="4GD-Yl-zfb"/>
+                                    <constraint firstItem="spa-M4-BHB" firstAttribute="top" secondItem="hJt-nf-sCK" secondAttribute="top" constant="40" id="FDB-QB-TG6"/>
                                     <constraint firstAttribute="trailing" secondItem="YQ8-f8-cbc" secondAttribute="trailing" constant="20" id="Gtd-fc-1rB"/>
+                                    <constraint firstAttribute="trailing" secondItem="spa-M4-BHB" secondAttribute="trailing" constant="20" id="MWW-xQ-utw"/>
                                     <constraint firstAttribute="height" constant="358" id="RvZ-OG-gfZ"/>
+                                    <constraint firstItem="YQ8-f8-cbc" firstAttribute="top" secondItem="spa-M4-BHB" secondAttribute="bottom" constant="100" id="UOc-73-WZT"/>
                                     <constraint firstItem="YQ8-f8-cbc" firstAttribute="leading" secondItem="hJt-nf-sCK" secondAttribute="leading" constant="20" id="hmM-2q-r8X"/>
-                                    <constraint firstItem="JFg-jZ-m8N" firstAttribute="leading" secondItem="hJt-nf-sCK" secondAttribute="leading" constant="20" id="oGH-fw-M7M"/>
-                                    <constraint firstAttribute="bottom" secondItem="YQ8-f8-cbc" secondAttribute="bottom" constant="20" id="tBB-9F-j6x"/>
-                                    <constraint firstItem="JFg-jZ-m8N" firstAttribute="top" secondItem="hJt-nf-sCK" secondAttribute="top" constant="20" id="uPJ-CF-TBg"/>
-                                    <constraint firstItem="YQ8-f8-cbc" firstAttribute="top" secondItem="JFg-jZ-m8N" secondAttribute="bottom" id="y5D-mm-qke"/>
+                                    <constraint firstAttribute="bottom" secondItem="YQ8-f8-cbc" secondAttribute="bottom" constant="100" id="tBB-9F-j6x"/>
                                 </constraints>
                             </view>
                         </subviews>
