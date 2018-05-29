@@ -954,8 +954,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQ8-f8-cbc">
-                                        <rect key="frame" x="20" y="168" width="303" height="90"/>
+                                        <rect key="frame" x="20" y="138" width="303" height="50"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="izK-cZ-0QH"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="24"/>
                                         <state key="normal" title=" By Email" image="emailIcon">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -973,9 +976,8 @@
                                     <constraint firstAttribute="trailing" secondItem="YQ8-f8-cbc" secondAttribute="trailing" constant="20" id="Gtd-fc-1rB"/>
                                     <constraint firstAttribute="trailing" secondItem="spa-M4-BHB" secondAttribute="trailing" constant="20" id="MWW-xQ-utw"/>
                                     <constraint firstAttribute="height" constant="358" id="RvZ-OG-gfZ"/>
-                                    <constraint firstItem="YQ8-f8-cbc" firstAttribute="top" secondItem="spa-M4-BHB" secondAttribute="bottom" constant="100" id="UOc-73-WZT"/>
+                                    <constraint firstItem="YQ8-f8-cbc" firstAttribute="top" secondItem="spa-M4-BHB" secondAttribute="bottom" constant="70" id="UOc-73-WZT"/>
                                     <constraint firstItem="YQ8-f8-cbc" firstAttribute="leading" secondItem="hJt-nf-sCK" secondAttribute="leading" constant="20" id="hmM-2q-r8X"/>
-                                    <constraint firstAttribute="bottom" secondItem="YQ8-f8-cbc" secondAttribute="bottom" constant="100" id="tBB-9F-j6x"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -992,6 +994,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qll-tj-7PQ"/>
                     </view>
+                    <connections>
+                        <outlet property="emailSignInBtn" destination="YQ8-f8-cbc" id="7od-4l-LPV"/>
+                        <outlet property="shadowView" destination="hJt-nf-sCK" id="wzp-1L-JYa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJA-Qt-cuj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

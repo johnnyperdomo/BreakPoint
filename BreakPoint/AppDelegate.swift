@@ -8,9 +8,10 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
 
@@ -19,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
+
         if Auth.auth().currentUser == nil { //if there is no user logged in, present AuthVC
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main) //constant to hold the storyboard
             let authVC = storyboard.instantiateViewController(withIdentifier: "AuthVC")
@@ -31,6 +35,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let err = error {
+            print("Failed to log into Google: ", err)
+            return
+        }
+        
+        print("Successfully logged into Google", user)
+        
+        
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+        
+
+        Auth.auth().signIn(with: credential) { (user, error) in
+            if let err = error {
+                print("Failed to create a Firebase User with Google Account: ", err)
+            }
+            
+            let userData = ["provider": user?.providerID, "email": user?.email] //dictionary of user data
+            DataService.instance.createDBUser(uid: (user?.uid)!, userData: userData)
+            
+            print("Successfully logged into Firebase with Google", user?.uid)
+            AuthService.instance.loginUser(withEmail: (user?.email)!, andPassword: authentication.accessToken, loginComplete: { (success, loginError) in
+                if success {
+                     print("login successfully to app")
+                } else {
+                    print(String(describing: loginError?.localizedDescription))
+                }
+            })
+        }
+    }
+    
+    func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any])
+        -> Bool {
+            return GIDSignIn.sharedInstance().handle(url,
+                                                     sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+                                                     annotation: [:])
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

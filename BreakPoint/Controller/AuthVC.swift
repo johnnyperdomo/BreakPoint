@@ -8,13 +8,30 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
-class AuthVC: UIViewController {
+class AuthVC: UIViewController, GIDSignInUIDelegate {
+
+    @IBOutlet weak var shadowView: ShadowView!
+    @IBOutlet weak var emailSignInBtn: UIButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setUpGoogleButton()
     }
 
+    fileprivate func setUpGoogleButton() {
+        GIDSignIn.sharedInstance().uiDelegate = self
+        
+        let googleBtn = GIDSignInButton()
+        googleBtn.frame = CGRect(x: emailSignInBtn.frame.minX, y: emailSignInBtn.frame.maxY + 40, width: emailSignInBtn.frame.width, height: emailSignInBtn.frame.height)
+        shadowView.addSubview(googleBtn)
+    }
+    
+    
+    
      override func viewDidAppear(_ animated: Bool) { //called everytime when view appears, not just when it loads for the first time
         super.viewDidAppear(animated)
         if Auth.auth().currentUser != nil { //if theres a user, dismiss the view controller
@@ -27,4 +44,9 @@ class AuthVC: UIViewController {
         present(loginVC!, animated: true, completion: nil) //go to the loginVC
     }
     
+    @IBAction func googleSignInBtnPressed(_ sender: GIDSignInButton) {
+        
+    }
+    
 }
+
