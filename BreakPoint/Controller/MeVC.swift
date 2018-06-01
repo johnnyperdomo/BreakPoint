@@ -13,7 +13,7 @@ import GoogleSignIn
 class MeVC: UIViewController {
 
     
-    let appdelegate = AppDelegate()
+    let appdelegate = AppDelegate() //app delegate
 
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var emailLbl: UILabel!
@@ -31,11 +31,12 @@ class MeVC: UIViewController {
         super.viewWillAppear(animated)
         self.emailLbl.text = Auth.auth().currentUser?.email //matches the emailLbl
         
-        DataService.instance.getBiographies(forUserId: (Auth.auth().currentUser?.uid)!) { (returnedBiographies) in //downloads biography message
-            self.updateBioLbl.text = returnedBiographies //sets the downloaded biography message as the biography label
+        if Auth.auth().currentUser != nil {
+            DataService.instance.getBiographies(forUserId: (Auth.auth().currentUser?.uid)!) { (returnedBiographies) in //downloads biography message
+                self.updateBioLbl.text = returnedBiographies //sets the downloaded biography message as the biography label
+            }
         }
-        
-        
+
     }
     
     
@@ -51,9 +52,10 @@ class MeVC: UIViewController {
         
         let logoutAction = UIAlertAction(title: "Logout?", style: .destructive) { (buttonTapped) in //when btn tapped, we will log out
             
-            self.appdelegate.signOutOfGoogle()
+            
             
             do { //it throws so do catch block
+                self.appdelegate.signOutOfGoogle() //signs out of google
                 try Auth.auth().signOut() //signs out
                 let authVC = self.storyboard?.instantiateViewController(withIdentifier: "AuthVC") as? AuthVC //presents authVC
                 self.present(authVC!, animated: true, completion: nil)

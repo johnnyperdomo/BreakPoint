@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
 
-        if Auth.auth().currentUser == nil  { //if there is no user logged in, present AuthVC
+        if GIDSignIn.sharedInstance().hasAuthInKeychain() == false && Auth.auth().currentUser == nil { //if there is no user logged in, present AuthVC
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main) //constant to hold the storyboard
             let authVC = storyboard.instantiateViewController(withIdentifier: "AuthVC")
             window?.makeKeyAndVisible() //make it key window
@@ -58,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             
             print("Successfully logged into Firebase with Google", user?.uid)
             
-            if !(GIDSignIn.sharedInstance().hasAuthInKeychain()) {
+            if !(GIDSignIn.sharedInstance().hasAuthInKeychain()) { //if no user was created
                 AuthService.instance.loginUser(withEmail: (user?.email)!, andPassword: authentication.accessToken, loginComplete: { (success, loginError) in
                     if success {
                         print("login successfully to app")
@@ -72,12 +72,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         }
     }
     
-    func signOutOfGoogle() {
+    func signOutOfGoogle() { //sign out
         let firebaseAuth = Auth.auth()
         
         do {
-            GIDSignIn.sharedInstance().disconnect()
-            try firebaseAuth.signOut()
+            GIDSignIn.sharedInstance().disconnect() //Disconnects the current user from the app and revokes previous authentication.
+            try firebaseAuth.signOut() //sign out
             print("Successfully logged out")
         } catch let signOutError as NSError {
             print("Error signing out: %@", signOutError)

@@ -31,16 +31,17 @@ class AuthVC: UIViewController, GIDSignInUIDelegate {
         
     }
     
-    
-    
      override func viewDidAppear(_ animated: Bool) { //called everytime when view appears, not just when it loads for the first time
         super.viewDidAppear(animated)
-        if Auth.auth().currentUser != nil { //if theres a user, dismiss the view controller
+        
+        if GIDSignIn.sharedInstance().hasAuthInKeychain() { //if there's a google user
             dismiss(animated: true, completion: nil)
-            
+        } else if Auth.auth().currentUser != nil { //if theres a user, dismiss the view controller
+            dismiss(animated: true, completion: nil)
         }
         
     }
+    
     
     @IBAction func signInWithEmailBtnPressed(_ sender: Any) {
     let loginVC = storyboard?.instantiateViewController(withIdentifier: "LoginVC")
