@@ -8,9 +8,12 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
 class MeVC: UIViewController {
 
+    
+    let appdelegate = AppDelegate()
 
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var emailLbl: UILabel!
@@ -36,8 +39,6 @@ class MeVC: UIViewController {
     }
     
     
-    
-    
     @IBAction func updateBioBtnPressed(_ sender: Any) {
         let updateBioVC = storyboard?.instantiateViewController(withIdentifier: "updateBioVC")
         present(updateBioVC!, animated: true, completion: nil)
@@ -49,6 +50,9 @@ class MeVC: UIViewController {
         let logoutPopUp = UIAlertController(title: "Logout?", message: "Are you sure you want to log out?", preferredStyle: .actionSheet) //puts an alert on screen
         
         let logoutAction = UIAlertAction(title: "Logout?", style: .destructive) { (buttonTapped) in //when btn tapped, we will log out
+            
+            self.appdelegate.signOutOfGoogle()
+            
             do { //it throws so do catch block
                 try Auth.auth().signOut() //signs out
                 let authVC = self.storyboard?.instantiateViewController(withIdentifier: "AuthVC") as? AuthVC //presents authVC
@@ -57,6 +61,8 @@ class MeVC: UIViewController {
                 print(error)
             }
         }
+        
+        
         logoutPopUp.addAction(logoutAction) //to add it to the popup
         present(logoutPopUp, animated: true, completion: nil) //call the popup
     }

@@ -57,6 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             DataService.instance.createDBUser(uid: (user?.uid)!, userData: userData)
             
             print("Successfully logged into Firebase with Google", user?.uid)
+            
             AuthService.instance.loginUser(withEmail: (user?.email)!, andPassword: authentication.accessToken, loginComplete: { (success, loginError) in
                 if success {
                      print("login successfully to app")
@@ -64,6 +65,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                     print(String(describing: loginError?.localizedDescription))
                 }
             })
+        }
+    }
+    
+    func signOutOfGoogle() {
+        let firebaseAuth = Auth.auth()
+        
+        do {
+            GIDSignIn.sharedInstance().disconnect()
+            try firebaseAuth.signOut()
+            print("Successfully logged out")
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
         }
     }
     

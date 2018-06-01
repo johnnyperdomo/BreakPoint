@@ -28,6 +28,7 @@ class AuthVC: UIViewController, GIDSignInUIDelegate {
         let googleBtn = GIDSignInButton()
         googleBtn.frame = CGRect(x: emailSignInBtn.frame.minX, y: emailSignInBtn.frame.maxY + 40, width: emailSignInBtn.frame.width, height: emailSignInBtn.frame.height)
         shadowView.addSubview(googleBtn)
+        
     }
     
     
@@ -36,7 +37,9 @@ class AuthVC: UIViewController, GIDSignInUIDelegate {
         super.viewDidAppear(animated)
         if Auth.auth().currentUser != nil { //if theres a user, dismiss the view controller
             dismiss(animated: true, completion: nil)
+            
         }
+        
     }
     
     @IBAction func signInWithEmailBtnPressed(_ sender: Any) {
@@ -44,9 +47,7 @@ class AuthVC: UIViewController, GIDSignInUIDelegate {
         present(loginVC!, animated: true, completion: nil) //go to the loginVC
     }
     
-    @IBAction func googleSignInBtnPressed(_ sender: GIDSignInButton) {
-        
-    }
+    
     
 }
 
