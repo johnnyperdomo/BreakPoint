@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
 
-        if Auth.auth().currentUser == nil { //if there is no user logged in, present AuthVC
+        if Auth.auth().currentUser == nil  { //if there is no user logged in, present AuthVC
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main) //constant to hold the storyboard
             let authVC = storyboard.instantiateViewController(withIdentifier: "AuthVC")
             window?.makeKeyAndVisible() //make it key window
@@ -58,13 +58,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             
             print("Successfully logged into Firebase with Google", user?.uid)
             
-            AuthService.instance.loginUser(withEmail: (user?.email)!, andPassword: authentication.accessToken, loginComplete: { (success, loginError) in
-                if success {
-                     print("login successfully to app")
-                } else {
-                    print(String(describing: loginError?.localizedDescription))
-                }
-            })
+            if !(GIDSignIn.sharedInstance().hasAuthInKeychain()) {
+                AuthService.instance.loginUser(withEmail: (user?.email)!, andPassword: authentication.accessToken, loginComplete: { (success, loginError) in
+                    if success {
+                        print("login successfully to app")
+                    } else {
+                        print("damn")
+                        print(String(describing: loginError?.localizedDescription))
+                    }
+                })
+            }
+            
         }
     }
     
