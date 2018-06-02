@@ -768,7 +768,7 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SgM-gt-V3f">
-                                        <rect key="frame" x="320" y="247" width="20" height="20"/>
+                                        <rect key="frame" x="320" y="244" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="f4K-nP-Ge2"/>
                                             <constraint firstAttribute="height" constant="20" id="y1Y-Gc-oZv"/>
@@ -778,8 +778,8 @@
                                             <action selector="updateBioBtnPressed:" destination="7n5-9k-UOg" eventType="touchUpInside" id="FPu-Eb-Ajj"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update Bio" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3S-7v-caW">
-                                        <rect key="frame" x="60" y="248.5" width="255" height="16.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update Bio" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="14" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3S-7v-caW" customClass="InsetUILabel" customModule="BreakPoint" customModuleProvider="target">
+                                        <rect key="frame" x="60" y="245" width="255" height="16.5"/>
                                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -793,20 +793,29 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFw-0d-JGF">
+                                        <rect key="frame" x="60" y="218.5" width="255" height="17.5"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.92176767869999998" green="0.70214329669999997" blue="0.086462734129999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="I3S-7v-caW" secondAttribute="bottom" constant="10" id="5dy-4S-Znx"/>
                                     <constraint firstItem="SgM-gt-V3f" firstAttribute="leading" secondItem="I3S-7v-caW" secondAttribute="trailing" constant="5" id="7cy-f8-Us2"/>
                                     <constraint firstItem="I3S-7v-caW" firstAttribute="leading" secondItem="jr1-6U-ycc" secondAttribute="leading" constant="60" id="92i-HX-LzO"/>
                                     <constraint firstAttribute="trailing" secondItem="I3S-7v-caW" secondAttribute="trailing" constant="60" id="WOU-md-YHm"/>
                                     <constraint firstItem="Sw7-pl-YzR" firstAttribute="leading" secondItem="jr1-6U-ycc" secondAttribute="leading" constant="65" id="YFg-f2-DoJ"/>
                                     <constraint firstAttribute="height" constant="275" id="bFJ-et-iB8"/>
+                                    <constraint firstItem="TFw-0d-JGF" firstAttribute="trailing" secondItem="I3S-7v-caW" secondAttribute="trailing" id="bUW-2O-i24"/>
                                     <constraint firstItem="Sw7-pl-YzR" firstAttribute="top" secondItem="jr1-6U-ycc" secondAttribute="top" constant="30" id="dkt-2x-U6C"/>
+                                    <constraint firstItem="I3S-7v-caW" firstAttribute="top" secondItem="TFw-0d-JGF" secondAttribute="bottom" constant="9" id="g54-Jm-Ohc"/>
                                     <constraint firstItem="0d1-Gr-Cep" firstAttribute="centerX" secondItem="jr1-6U-ycc" secondAttribute="centerX" id="i2r-2N-azd"/>
+                                    <constraint firstItem="I3S-7v-caW" firstAttribute="top" secondItem="0d1-Gr-Cep" secondAttribute="bottom" constant="80" id="pJV-H6-QU0"/>
                                     <constraint firstItem="SgM-gt-V3f" firstAttribute="centerY" secondItem="I3S-7v-caW" secondAttribute="centerY" id="pY1-gD-f56"/>
                                     <constraint firstItem="0d1-Gr-Cep" firstAttribute="top" secondItem="Sw7-pl-YzR" secondAttribute="bottom" constant="15" id="s3i-fb-GEY"/>
                                     <constraint firstAttribute="trailing" secondItem="Sw7-pl-YzR" secondAttribute="trailing" constant="65" id="w6e-RF-Xvi"/>
+                                    <constraint firstItem="TFw-0d-JGF" firstAttribute="leading" secondItem="I3S-7v-caW" secondAttribute="leading" id="wlE-1c-kZY"/>
                                 </constraints>
                             </view>
                         </subviews>

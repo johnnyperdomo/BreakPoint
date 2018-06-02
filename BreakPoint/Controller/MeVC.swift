@@ -17,7 +17,7 @@ class MeVC: UIViewController {
 
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var emailLbl: UILabel!
-    @IBOutlet weak var updateBioLbl: UILabel!
+    @IBOutlet weak var updateBioLbl: InsetUILabel!
     
     
     override func viewDidLoad() {
