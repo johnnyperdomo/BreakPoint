@@ -22,8 +22,9 @@ class MeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
+        updateBioLbl.layer.borderWidth = 1
+        updateBioLbl.layer.borderColor = #colorLiteral(red: 0.9017186761, green: 0.4714548588, blue: 0, alpha: 1)
+        updateBioLbl.layer.cornerRadius = 8
     }
     
     
