@@ -36,7 +36,7 @@ class CreatePostVC: UIViewController {
     }
     
     @IBAction func sendBtnPressed(_ sender: Any) {
-        if textView.text != nil && textView.text != "Say something here..." { //if user hasn't typed yet
+        if textView.text != "" && textView.text != "Say something here..." { //if user hasn't typed yet
             sendBtn.isEnabled = false //disable send btn
             
             //dont need a group key since its a public feed
@@ -45,7 +45,7 @@ class CreatePostVC: UIViewController {
                     self.sendBtn.isEnabled = true
                     self.dismiss(animated: true, completion: nil) //dismiss VC
                 } else {
-                    self.sendBtn.isEnabled = true
+                    self.sendBtn.isEnabled = false
                     print("There was an error")
                 }
             }
