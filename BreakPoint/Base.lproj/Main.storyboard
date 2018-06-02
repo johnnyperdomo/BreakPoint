@@ -1052,13 +1052,12 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="le6-kl-epA">
                                 <rect key="frame" x="147.5" y="259" width="80" height="33"/>
+                                <color key="backgroundColor" red="0.92176767869999998" green="0.70214329669999997" blue="0.086462734129999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="Jsn-fX-8Ui"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
-                                <state key="normal" title="SIGN IN">
-                                    <color key="titleColor" red="0.84556606059999995" green="0.49399197169999998" blue="0.077070128200000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
+                                <state key="normal" title="SIGN IN"/>
                                 <connections>
                                     <action selector="signInBtnPressed:" destination="tk9-o2-tEt" eventType="touchUpInside" id="3nz-19-DZM"/>
                                 </connections>

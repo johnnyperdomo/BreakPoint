@@ -29,6 +29,8 @@ class UpdateBioVC: UIViewController, UITextViewDelegate {
             }
         }
         
+        
+        
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {

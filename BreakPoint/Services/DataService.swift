@@ -118,10 +118,9 @@ class DataService {
             guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return }
             
             for user in userSnapshot {
-                let userId = user.childSnapshot(forPath: "user").value as! String
                 let biography = user.childSnapshot(forPath: "Biography").value as! String
                 
-                if userId == id {
+                if user.key == id {
                     biographyText.append(biography)
                 }
             }
@@ -193,7 +192,7 @@ class DataService {
     
     //to create a biography for the user
     func createBiography(withText text: String, forUID id: String, complete: @escaping (_ status: Bool) -> ()) {
-        REF_BIO.childByAutoId().updateChildValues(["Biography": text, "user": id]) //dictionary
+        REF_BIO.child(id).updateChildValues(["Biography": text, "userName": Auth.auth().currentUser?.email])
         complete(true)
     }
     
