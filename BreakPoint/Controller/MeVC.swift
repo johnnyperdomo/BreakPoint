@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import GoogleSignIn
 
-class MeVC: UIViewController {
+class MeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     
     let appdelegate = AppDelegate() //app delegate
@@ -18,6 +18,7 @@ class MeVC: UIViewController {
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var emailLbl: UILabel!
     @IBOutlet weak var updateBioLbl: InsetUILabel!
+    @IBOutlet weak var updateImageBtn: UIButton!
     
     
     override func viewDidLoad() {
@@ -25,6 +26,9 @@ class MeVC: UIViewController {
         updateBioLbl.layer.borderWidth = 1
         updateBioLbl.layer.borderColor = #colorLiteral(red: 0.9017186761, green: 0.4714548588, blue: 0, alpha: 1)
         updateBioLbl.layer.cornerRadius = 8
+        
+        
+        updateImageBtn.layer.cornerRadius = 8
     }
     
     
@@ -45,6 +49,15 @@ class MeVC: UIViewController {
         let updateBioVC = storyboard?.instantiateViewController(withIdentifier: "updateBioVC")
         present(updateBioVC!, animated: true, completion: nil)
         
+    }
+    
+    @IBAction func updateImageBtnPressed(_ sender: Any) {
+        let picker = UIImagePickerController() //lets us choose an image
+        
+        picker.delegate = self //delegate
+        picker.allowsEditing = true //allows us to edit image
+        
+        present(picker, animated: true, completion: nil)
     }
     
     
@@ -69,4 +82,37 @@ class MeVC: UIViewController {
         logoutPopUp.addAction(logoutAction) //to add it to the popup
         present(logoutPopUp, animated: true, completion: nil) //call the popup
     }
+    
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) { //if we cancel picking an image
+        print("canceled picker")
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        var selectedImageFromPicker: UIImage? //to see if we selected an image
+        
+        
+        if let editedImage = info["UIImagePickerControllerEditedImage"] {
+            selectedImageFromPicker = editedImage as! UIImage
+            
+        } else if let originalImage = info["UIImagePickerControllerOriginalImage"] {
+            selectedImageFromPicker = originalImage as! UIImage
+            
+        }
+   
+        if let selectedImage = selectedImageFromPicker {
+            profileImg.image = selectedImage
+        }
+        
+        
+        
+        
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
+    
+    
 }
