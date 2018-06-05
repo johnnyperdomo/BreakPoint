@@ -11,7 +11,8 @@
 import Foundation
 import Firebase
 
-let DB_BASE = Database.database().reference() //Base Url
+let DB_BASE = Database.database().reference() //file-path to dataBase
+let STORAGE_BASE = Storage.storage().reference() //file-path to storage
 
 class DataService {
     static let instance = DataService()
@@ -22,7 +23,9 @@ class DataService {
     private var _REF_GROUPS = DB_BASE.child("groups")
     private var _REF_FEED = DB_BASE.child("feed")
     private var _REF_BIO = DB_BASE.child("biographies")
+    private var _REF_DB_PROFILE_IMAGES = DB_BASE.child("profile-images")
     
+    private var _REF_STORAGE_PROFILE_IMAGE = STORAGE_BASE.child("profile-images") //this goes in storage
     
     //we use these regular variables to be able to access the data later on...since they are not private
     var REF_BASE: DatabaseReference {
@@ -44,6 +47,20 @@ class DataService {
     var REF_BIO: DatabaseReference {
         return _REF_BIO
     }
+    
+    var REF_DB_PROFILE_IMAGES: DatabaseReference {
+        return _REF_DB_PROFILE_IMAGES
+    }
+    
+    
+    var REF_STORAGE_PROFILE_IMAGE: StorageReference {
+        return _REF_STORAGE_PROFILE_IMAGE
+    }
+    
+    
+    
+    
+    
     func createDBUser(uid: String, userData: Dictionary<String, Any>) { //func to get users and push that data into FireBase to make a database; user-identification-id(uid)
         REF_USERS.child(uid).updateChildValues(userData) // make a firebase user
     }
@@ -183,6 +200,37 @@ class DataService {
         }
     }
     
+    
+    
+    func uploadProfileImageToStorage(withImage image: UIImage, forUID id: String, complete: @escaping (_ status: Bool) -> ()) {
+        
+        let uploadData = UIImagePNGRepresentation(image)
+        let randomImageName = NSUUID().uuidString //gets a random string
+        
+        REF_STORAGE_PROFILE_IMAGE.child("\(randomImageName).png").putData(uploadData!, metadata: nil) { (metadata, error) in 
+            
+            if error != nil {
+                print(error)
+                return
+            }
+            
+            print(metadata)
+            
+            
+            if let profileImageUrl = metadata?.downloadURL()?.absoluteString { //gets string for url
+
+                let profileIamgeDataArray = ["imageUrl": profileImageUrl, "userName": Auth.auth().currentUser?.email]
+                
+                self.uploadProfileImageToDatabase(forUID: id, dataArray: profileIamgeDataArray as [String : AnyObject])
+
+            }
+                complete(true)
+        }
+    }
+    
+    func uploadProfileImageToDatabase(forUID id: String, dataArray: [String: AnyObject]) {
+        REF_DB_PROFILE_IMAGES.child(id).updateChildValues(dataArray) //creates a data Array to store profile images in database
+    }
     
     //to successfully create a group with members...and send it to firebase later
     func createGroup(withTitle title: String, andDescription description: String, forUserIds ids: [String], handler: @escaping (_ groupCreated: Bool) -> ()) {

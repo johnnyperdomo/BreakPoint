@@ -104,6 +104,13 @@ class MeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
    
         if let selectedImage = selectedImageFromPicker {
             profileImg.image = selectedImage
+            
+            DataService.instance.uploadProfileImageToStorage(withImage: selectedImage, forUID: (Auth.auth().currentUser?.uid)!) { (success) in
+                
+                if success {
+                    print("successfully upload photo")
+                }
+            }
         }
         
         
