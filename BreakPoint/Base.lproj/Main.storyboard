@@ -338,7 +338,7 @@
                                         <connections>
                                             <outlet property="contentLbl" destination="ntV-WO-Kuy" id="dU0-6q-K7G"/>
                                             <outlet property="emailLbl" destination="xt8-TH-04j" id="KSN-zx-iXH"/>
-                                            <outlet property="profileImg" destination="Y37-JX-OSg" id="SRN-yQ-r0e"/>
+                                            <outlet property="profileImg" destination="Y37-JX-OSg" id="9rq-cN-GHa"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -768,7 +768,7 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SgM-gt-V3f">
-                                        <rect key="frame" x="320" y="306" width="20" height="20"/>
+                                        <rect key="frame" x="320" y="311" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="f4K-nP-Ge2"/>
                                             <constraint firstAttribute="height" constant="20" id="y1Y-Gc-oZv"/>
@@ -779,7 +779,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update Bio" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="14" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3S-7v-caW" customClass="InsetUILabel" customModule="BreakPoint" customModuleProvider="target">
-                                        <rect key="frame" x="60" y="307" width="255" height="16.5"/>
+                                        <rect key="frame" x="60" y="307" width="255" height="26.5"/>
                                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

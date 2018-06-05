@@ -10,6 +10,7 @@
 
 import Foundation
 import Firebase
+import FirebaseStorage
 
 let DB_BASE = Database.database().reference() //file-path to dataBase
 let STORAGE_BASE = Storage.storage().reference() //file-path to storage
