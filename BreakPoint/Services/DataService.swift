@@ -201,7 +201,62 @@ class DataService {
         }
     }
     
+    func downloadProfileImageURL(forUID id : String, handler: @escaping (_ imageURL: String) -> ()) {
+        
+        // var downloadededProfileImageUrl = String()
+        var downloadedProfileImageURL = String()
+        
+        REF_DB_PROFILE_IMAGES.observeSingleEvent(of: .value) { (userSnapshot) in
+            guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            
+            for user in userSnapshot {
+                let profileImageUrl = user.childSnapshot(forPath: "imageUrl").value as! String
+                
+                if user.key == id {
+                    downloadedProfileImageURL = profileImageUrl
+                    
+                    
+
+                }
+                
+            }
+           handler(downloadedProfileImageURL)
+           
+        }
+    }
     
+    func downloadProfileImage(forUID id: String, forImageURL imageUrl: String, image: UIImageView) { //to download image from firebase storage using the url
+        
+        
+        REF_DB_PROFILE_IMAGES.observeSingleEvent(of: .value) { (userSnapshot) in
+            guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            
+            for user in userSnapshot {
+                if user.key == id {
+                    
+                    let url = URL(string:imageUrl)
+                    URLSession.shared.dataTask(with: url!) { (data, response, error) in
+                        
+                        if error != nil {
+                            print(error)
+                            return
+                        }
+                        
+                        DispatchQueue.main.async() {
+                            image.image  = UIImage(data: data!)!
+                        }
+                        
+                        
+                        }.resume()
+                    
+                }
+                
+            }
+        }
+        
+    }
+    
+
     
     func uploadProfileImageToStorage(withImage image: UIImage, forUID id: String, complete: @escaping (_ status: Bool) -> ()) {
         

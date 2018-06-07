@@ -13,6 +13,7 @@ import GoogleSignIn
 class MeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     
+    var downloadedProfileURL = String() //to store downloaded url strings for images
     let appdelegate = AppDelegate() //app delegate
 
     @IBOutlet weak var profileImg: UIImageView!
@@ -29,6 +30,22 @@ class MeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
         
         
         updateImageBtn.layer.cornerRadius = 8
+        
+        if Auth.auth().currentUser != nil {
+            DataService.instance.downloadProfileImageURL(forUID: (Auth.auth().currentUser?.uid)!) { (returnedURL) in //to call the downloadImage function
+                
+                self.downloadedProfileURL = returnedURL
+                
+                if returnedURL == "" { //if there is no image chosen, there isn't going to be a url
+                    print("user has no profile image")
+                    return
+                } else {
+                    print("successfully download profile image")
+                    DataService.instance.downloadProfileImage(forUID: (Auth.auth().currentUser?.uid)!, forImageURL: self.downloadedProfileURL, image: self.profileImg)
+                }
+            }
+        }
+        
     }
     
     
@@ -37,11 +54,11 @@ class MeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
         self.emailLbl.text = Auth.auth().currentUser?.email //matches the emailLbl
         
         if Auth.auth().currentUser != nil {
+            
             DataService.instance.getBiographies(forUserId: (Auth.auth().currentUser?.uid)!) { (returnedBiographies) in //downloads biography message
                 self.updateBioLbl.text = returnedBiographies //sets the downloaded biography message as the biography label
             }
         }
-
     }
     
     
@@ -109,8 +126,22 @@ class MeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
                 
                 if success {
                     print("successfully upload photo")
+                    
+                    DataService.instance.downloadProfileImageURL(forUID: (Auth.auth().currentUser?.uid)!) { (returnedURL) in //to call the downloadImage function
+                        
+                        if returnedURL == "" {
+                            print("user has no profile image")
+                            return
+                        } else {
+                            print("successfully download profile image")
+                            DataService.instance.downloadProfileImage(forUID: (Auth.auth().currentUser?.uid)!, forImageURL: returnedURL, image: self.profileImg)
+                        }
+                        
+                    }
                 }
             }
+            
+            
         }
         
         
