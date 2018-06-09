@@ -284,7 +284,7 @@ class DataService {
         }
     }
     
-    func uploadProfileImageToDatabase(forUID id: String, dataArray: [String: AnyObject]) {
+   private func uploadProfileImageToDatabase(forUID id: String, dataArray: [String: AnyObject]) {
         REF_DB_PROFILE_IMAGES.child(id).updateChildValues(dataArray) //creates a data Array to store profile images in database
     }
     

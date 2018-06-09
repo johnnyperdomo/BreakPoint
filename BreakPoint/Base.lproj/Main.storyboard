@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1016,7 +1016,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJA-Qt-cuj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1719.2" y="-7.6461769115442282"/>
+            <point key="canvasLocation" x="-2047" y="-8"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="oZH-0x-Se7">
@@ -1072,12 +1072,12 @@
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="le6-kl-epA">
-                                <rect key="frame" x="147.5" y="259" width="80" height="33"/>
+                                <rect key="frame" x="147" y="259" width="80" height="33"/>
                                 <color key="backgroundColor" red="0.92176767869999998" green="0.70214329669999997" blue="0.086462734129999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="Jsn-fX-8Ui"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="18"/>
                                 <state key="normal" title="SIGN IN"/>
                                 <connections>
                                     <action selector="signInBtnPressed:" destination="tk9-o2-tEt" eventType="touchUpInside" id="3nz-19-DZM"/>
@@ -1091,9 +1091,9 @@
                             <constraint firstItem="uVH-AR-Kde" firstAttribute="leading" secondItem="1EU-ub-ffJ" secondAttribute="leading" constant="40" id="F3r-Sr-FnT"/>
                             <constraint firstItem="1EU-ub-ffJ" firstAttribute="trailing" secondItem="uVH-AR-Kde" secondAttribute="trailing" constant="40" id="emj-BP-g79"/>
                             <constraint firstItem="n42-ro-eOE" firstAttribute="leading" secondItem="1EU-ub-ffJ" secondAttribute="leading" constant="20" id="iHD-bU-xQI"/>
+                            <constraint firstItem="le6-kl-epA" firstAttribute="top" secondItem="uVH-AR-Kde" secondAttribute="bottom" constant="20" id="mRY-2O-3gz"/>
                             <constraint firstItem="n42-ro-eOE" firstAttribute="top" secondItem="1EU-ub-ffJ" secondAttribute="top" constant="8" id="nb8-Wz-2Ev"/>
                             <constraint firstItem="n42-ro-eOE" firstAttribute="top" secondItem="1EU-ub-ffJ" secondAttribute="top" constant="8" id="oi5-0O-0jL"/>
-                            <constraint firstItem="le6-kl-epA" firstAttribute="top" secondItem="uVH-AR-Kde" secondAttribute="bottom" constant="20" id="pTf-Ot-pyh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1EU-ub-ffJ"/>
                     </view>
@@ -1104,7 +1104,65 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0cY-Fs-mQZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1052" y="-8.5457271364317844"/>
+            <point key="canvasLocation" x="-1380" y="-9"/>
+        </scene>
+        <!--Pick ImageVC-->
+        <scene sceneID="ATo-Mi-WsV">
+            <objects>
+                <viewController storyboardIdentifier="pickImageVC" id="qT8-sJ-XDq" customClass="PickImageVC" customModule="BreakPoint" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ibm-cO-gWI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="SEL-LY-BYd">
+                                <rect key="frame" x="137" y="120" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="IFE-3l-9Qd"/>
+                                    <constraint firstAttribute="height" constant="100" id="bBm-op-bpp"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmW-Xb-Xun">
+                                <rect key="frame" x="133" y="270" width="109" height="30"/>
+                                <color key="backgroundColor" red="0.92176767869999998" green="0.70214329669999997" blue="0.086462734129999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
+                                <state key="normal" title="Choose Image"/>
+                                <connections>
+                                    <action selector="chooseImgBtnPressed:" destination="qT8-sJ-XDq" eventType="touchUpInside" id="L3S-1r-MwO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdt-j7-55B">
+                                <rect key="frame" x="87.5" y="531" width="200" height="36"/>
+                                <color key="backgroundColor" red="0.92176767869999998" green="0.70214329669999997" blue="0.086462734129999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="w2E-J8-7VQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneBtnPressed:" destination="qT8-sJ-XDq" eventType="touchUpInside" id="1lK-9X-YTb"/>
+                                    <action selector="signInBtnPressed:" destination="tk9-o2-tEt" eventType="touchUpInside" id="fCk-8I-Rx6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.84556606059999995" green="0.49399197169999998" blue="0.077070128200000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="rmW-Xb-Xun" firstAttribute="top" secondItem="SEL-LY-BYd" secondAttribute="bottom" constant="50" id="4Wf-v9-QjM"/>
+                            <constraint firstItem="qdt-j7-55B" firstAttribute="centerX" secondItem="Ibm-cO-gWI" secondAttribute="centerX" id="Aff-QE-c3I"/>
+                            <constraint firstItem="SEL-LY-BYd" firstAttribute="top" secondItem="xRj-Ez-IpG" secondAttribute="top" constant="100" id="cDo-kj-68q"/>
+                            <constraint firstItem="xRj-Ez-IpG" firstAttribute="bottom" secondItem="qdt-j7-55B" secondAttribute="bottom" constant="100" id="dZA-6N-9P0"/>
+                            <constraint firstItem="rmW-Xb-Xun" firstAttribute="centerX" secondItem="Ibm-cO-gWI" secondAttribute="centerX" id="zSF-3b-m4y"/>
+                            <constraint firstItem="SEL-LY-BYd" firstAttribute="centerX" secondItem="Ibm-cO-gWI" secondAttribute="centerX" id="zUF-Qw-ZrR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xRj-Ez-IpG"/>
+                    </view>
+                    <connections>
+                        <outlet property="chooseImgBtn" destination="rmW-Xb-Xun" id="LxB-1A-adh"/>
+                        <outlet property="profileImg" destination="SEL-LY-BYd" id="Fb4-HX-F6Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mYv-DT-lTT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-702" y="-9"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
