@@ -30,7 +30,11 @@ class MeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
         
         
         updateImageBtn.layer.cornerRadius = 8
-        
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         if Auth.auth().currentUser != nil {
             DataService.instance.downloadProfileImageURL(forUID: (Auth.auth().currentUser?.uid)!) { (returnedURL) in //to call the downloadImage function
                 
@@ -143,9 +147,6 @@ class MeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
             
             
         }
-        
-        
-        
         
         dismiss(animated: true, completion: nil)
         
