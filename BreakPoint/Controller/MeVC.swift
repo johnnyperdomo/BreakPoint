@@ -94,6 +94,7 @@ class MeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
                 try Auth.auth().signOut() //signs out
                 let authVC = self.storyboard?.instantiateViewController(withIdentifier: "AuthVC") as? AuthVC //presents authVC
                 self.present(authVC!, animated: true, completion: nil)
+                self.profileImg.image = UIImage(named: "defaultProfileImage")
             } catch {
                 print(error)
             }
