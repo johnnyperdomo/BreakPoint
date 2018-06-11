@@ -11,6 +11,8 @@ import Firebase
 
 class CreatePostVC: UIViewController {
 
+    var downloadedProfileURL = String()
+    
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var emailLbl: UILabel!
     @IBOutlet weak var textView: UITextView!
@@ -28,6 +30,21 @@ class CreatePostVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) { //update the changes, view will appear
         super.viewWillAppear(animated)
         self.emailLbl.text = Auth.auth().currentUser?.email //matches the emailLbl
+        
+        if Auth.auth().currentUser != nil {
+            DataService.instance.downloadProfileImageURL(forUID: (Auth.auth().currentUser?.uid)!) { (returnedURL) in //to call the downloadImage function
+                
+                self.downloadedProfileURL = returnedURL
+                
+                if returnedURL == "" { //if there is no image chosen, there isn't going to be a url
+                    print("user has no profile image")
+                    return
+                } else {
+                    print("successfully download profile image")
+                    DataService.instance.downloadProfileImage(forUID: (Auth.auth().currentUser?.uid)!, forImageURL: self.downloadedProfileURL, image: self.profileImg)
+                }
+            }
+        }
     }
     
     

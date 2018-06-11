@@ -19,7 +19,7 @@ class GroupFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet weak var sendBtn: UIButton!
     @IBOutlet var mainView: UIView!
     
-    
+    var downloadedProfileURL = String()
     var group: Group? //to hold the data for the group; optional just in case we dont have a value
     var groupMessages = [Message]() //hold the values
     
@@ -99,9 +99,26 @@ class GroupFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         let message = groupMessages[indexPath.row] //to get the content
         
+        DataService.instance.downloadProfileImageURL(forUID: message.senderId) { (returnedURL) in //to call the downloadImage function
+            
+            self.downloadedProfileURL = returnedURL
+            
+            if returnedURL == "" { //if there is no image chosen, there isn't going to be a url
+                print("user has no profile image")
+                return
+            } else {
+                print("successfully download profile image")
+                DataService.instance.downloadProfileImage(forUID: message.senderId, forImageURL: self.downloadedProfileURL, image: cell.imageView!)
+                
+            }
+        }
+        
         DataService.instance.getUsername(forUID: message.senderId) { (email) in //gets the email from the senderid
             cell.configureCell(profileImage: UIImage(named: "defaultProfileImage")!, email: email, message: message.content)
         }
+        
+        
+        
         return cell
     }
     
