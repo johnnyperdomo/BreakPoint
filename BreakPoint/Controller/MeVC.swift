@@ -28,7 +28,8 @@ class MeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
         updateBioLbl.layer.borderColor = #colorLiteral(red: 0.9017186761, green: 0.4714548588, blue: 0, alpha: 1)
         updateBioLbl.layer.cornerRadius = 8
         
-        
+
+        profileImg.layer.cornerRadius = profileImg.frame.size.height / 2
         updateImageBtn.layer.cornerRadius = 8
     }
     

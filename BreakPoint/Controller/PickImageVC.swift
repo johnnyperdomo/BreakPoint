@@ -48,6 +48,7 @@ class PickImageVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         
         if let selectedImage = selectedImageFromPicker {
             profileImg.image = selectedImage
+            profileImg.layer.cornerRadius = profileImg.frame.size.height / 2
         }
         dismiss(animated: true, completion: nil)
         
