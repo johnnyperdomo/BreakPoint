@@ -10,14 +10,12 @@ import UIKit
 
 class UserCell: UITableViewCell {
 
-    @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var emailLbl: UILabel!
     @IBOutlet weak var checkImg: UIImageView!
     
     var showing = false //if checkmark is showing
     
-    func configureCell(profileImg: UIImage, email:String, isSelected: Bool) {
-        self.profileImg.image = profileImg
+    func configureCell(email:String, isSelected: Bool) {
         self.emailLbl.text = email
         if isSelected { //if user is selected
             self.checkImg.isHidden = false

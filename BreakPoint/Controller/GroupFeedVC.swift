@@ -103,12 +103,18 @@ class GroupFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             
             self.downloadedProfileURL = returnedURL
             
+            
             if returnedURL == "" { //if there is no image chosen, there isn't going to be a url
                 print("user has no profile image")
                 return
             } else {
                 print("successfully download profile image")
-                DataService.instance.downloadProfileImage(forUID: message.senderId, forImageURL: self.downloadedProfileURL, image: cell.imageView!)
+                DataService.instance.downloadProfileImage(forUID: message.senderId, forImageURL: self.downloadedProfileURL, image: cell.imageView!, complete: { (success) in
+                    
+                    if success {
+                        self.tableView.reloadData()
+                    }
+                })
                 
             }
         }
@@ -116,8 +122,6 @@ class GroupFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         DataService.instance.getUsername(forUID: message.senderId) { (email) in //gets the email from the senderid
             cell.configureCell(profileImage: UIImage(named: "defaultProfileImage")!, email: email, message: message.content)
         }
-        
-        
         
         return cell
     }

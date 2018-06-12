@@ -82,12 +82,11 @@ class CreateGroupsVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell { //emails in the rows for the search Query
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "userCell")  as? UserCell else { return UITableViewCell() }
-        let profileimg = UIImage(named: "defaultProfileImage")
         
         if chosenUserArray.contains(emailArray[indexPath.row]){ //to check if we have already tapped on a member to be added to the array
-            cell.configureCell(profileImg: profileimg!, email: emailArray[indexPath.row], isSelected: true) //pulls the email from the proper row
+            cell.configureCell(email: emailArray[indexPath.row], isSelected: true) //pulls the email from the proper row
         } else { //if they're not in array
-            cell.configureCell(profileImg: profileimg!, email: emailArray[indexPath.row], isSelected: false) //sets the checkmark to be hidden
+            cell.configureCell(email: emailArray[indexPath.row], isSelected: false) //sets the checkmark to be hidden
         }
         
         return cell

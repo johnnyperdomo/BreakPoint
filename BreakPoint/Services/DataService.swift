@@ -225,7 +225,7 @@ class DataService {
         }
     }
     
-    func downloadProfileImage(forUID id: String, forImageURL imageUrl: String, image: UIImageView) { //to download image from firebase storage using the url
+    func downloadProfileImage(forUID id: String, forImageURL imageUrl: String, image: UIImageView, complete: @escaping (_ status: Bool) -> ()) { //to download image from firebase storage using the url
         
         
         REF_DB_PROFILE_IMAGES.observeSingleEvent(of: .value) { (userSnapshot) in
@@ -252,6 +252,8 @@ class DataService {
                 }
                 
             }
+            
+            complete(true)
         }
         
     }

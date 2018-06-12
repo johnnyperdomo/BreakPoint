@@ -53,15 +53,15 @@
                                     <constraint firstItem="QZD-NK-7dL" firstAttribute="centerX" secondItem="IxV-08-XwX" secondAttribute="centerX" id="xc6-8H-dhc"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fem-00-q2a">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fem-00-q2a">
                                 <rect key="frame" x="0.0" y="70" width="375" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="100" id="BpE-bO-djC" customClass="FeedCell" customModule="BreakPoint" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="85" id="BpE-bO-djC" customClass="FeedCell" customModule="BreakPoint" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BpE-bO-djC" id="bDi-dp-h1B">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="84.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="iJJ-xA-ilb">
@@ -72,19 +72,19 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="l55-6y-1yk">
-                                                    <rect key="frame" x="85" y="21" width="265" height="58"/>
+                                                    <rect key="frame" x="125" y="21" width="225" height="43"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user@breakpoint.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAH-gZ-PI7">
-                                                            <rect key="frame" x="0.0" y="0.0" width="265" height="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="225" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="2sY-Qo-pzh"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="message content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="CAx-dR-ECn">
-                                                            <rect key="frame" x="0.0" y="26" width="265" height="32"/>
+                                                            <rect key="frame" x="0.0" y="26" width="225" height="17"/>
                                                             <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -97,7 +97,7 @@
                                                 <constraint firstItem="iJJ-xA-ilb" firstAttribute="top" secondItem="bDi-dp-h1B" secondAttribute="topMargin" constant="10" id="AyW-tM-HWt"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="l55-6y-1yk" secondAttribute="bottom" constant="10" id="ENq-TE-iW6"/>
                                                 <constraint firstItem="iJJ-xA-ilb" firstAttribute="leading" secondItem="bDi-dp-h1B" secondAttribute="leadingMargin" constant="10" id="HSC-Kc-xYx"/>
-                                                <constraint firstItem="l55-6y-1yk" firstAttribute="leading" secondItem="iJJ-xA-ilb" secondAttribute="trailing" constant="10" id="dbY-nK-SMg"/>
+                                                <constraint firstItem="l55-6y-1yk" firstAttribute="leading" secondItem="iJJ-xA-ilb" secondAttribute="trailing" constant="50" id="dbY-nK-SMg"/>
                                                 <constraint firstItem="l55-6y-1yk" firstAttribute="top" secondItem="bDi-dp-h1B" secondAttribute="topMargin" constant="10" id="kg6-7P-5gS"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -287,15 +287,15 @@
                                     <constraint firstAttribute="height" constant="70" id="wWy-SG-3p1"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ggz-3g-fr8">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ggz-3g-fr8">
                                 <rect key="frame" x="0.0" y="103" width="375" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupFeedCell" rowHeight="100" id="3Em-9u-s57" customClass="GroupFeedCell" customModule="BreakPoint" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupFeedCell" rowHeight="85" id="3Em-9u-s57" customClass="GroupFeedCell" customModule="BreakPoint" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Em-9u-s57" id="fNs-TK-zMz">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="84.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="Y37-JX-OSg">
@@ -306,20 +306,20 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="eju-Bb-OLD">
-                                                    <rect key="frame" x="85" y="21" width="265" height="58"/>
+                                                    <rect key="frame" x="125" y="21" width="225" height="43"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user@breakpoint.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xt8-TH-04j">
-                                                            <rect key="frame" x="0.0" y="0.0" width="265" height="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="225" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="PKp-Eq-nz0"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="message content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ntV-WO-Kuy">
-                                                            <rect key="frame" x="0.0" y="26" width="265" height="32"/>
-                                                            <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="12"/>
+                                                            <rect key="frame" x="0.0" y="26" width="225" height="17"/>
+                                                            <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="13"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -328,7 +328,7 @@
                                             <constraints>
                                                 <constraint firstItem="Y37-JX-OSg" firstAttribute="leading" secondItem="fNs-TK-zMz" secondAttribute="leadingMargin" constant="10" id="8L6-t2-kkf"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="eju-Bb-OLD" secondAttribute="trailing" constant="10" id="HQj-n4-dxX"/>
-                                                <constraint firstItem="eju-Bb-OLD" firstAttribute="leading" secondItem="Y37-JX-OSg" secondAttribute="trailing" constant="10" id="JrY-Uw-pKY"/>
+                                                <constraint firstItem="eju-Bb-OLD" firstAttribute="leading" secondItem="Y37-JX-OSg" secondAttribute="trailing" constant="50" id="JrY-Uw-pKY"/>
                                                 <constraint firstItem="eju-Bb-OLD" firstAttribute="top" secondItem="fNs-TK-zMz" secondAttribute="topMargin" constant="10" id="Xrf-bL-SNz"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="eju-Bb-OLD" secondAttribute="bottom" constant="10" id="a5Z-J2-o1P"/>
                                                 <constraint firstItem="Y37-JX-OSg" firstAttribute="top" secondItem="fNs-TK-zMz" secondAttribute="topMargin" constant="10" id="xDS-dP-Ufb"/>
@@ -533,15 +533,8 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="335" height="60"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="b0A-Ae-ZxG">
-                                                            <rect key="frame" x="25" y="11" width="38" height="38"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="38" id="7d6-c1-tQX"/>
-                                                                <constraint firstAttribute="height" constant="38" id="HOR-Ri-yed"/>
-                                                            </constraints>
-                                                        </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user@breakpoint" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="meB-6A-8Mh">
-                                                            <rect key="frame" x="83" y="21" width="197" height="18"/>
+                                                            <rect key="frame" x="25" y="21" width="144.5" height="18"/>
                                                             <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -555,14 +548,10 @@
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstAttribute="trailingMargin" secondItem="0Ax-tb-gyB" secondAttribute="trailing" constant="10" id="2Im-4S-g2z"/>
-                                                        <constraint firstItem="meB-6A-8Mh" firstAttribute="leading" secondItem="b0A-Ae-ZxG" secondAttribute="trailing" constant="20" id="3v1-Ja-IzN"/>
-                                                        <constraint firstItem="b0A-Ae-ZxG" firstAttribute="leading" secondItem="gwo-9W-C3V" secondAttribute="leadingMargin" constant="10" id="6fw-7M-goR"/>
                                                         <constraint firstAttribute="bottomMargin" secondItem="0Ax-tb-gyB" secondAttribute="bottom" id="DC8-MS-jI5"/>
-                                                        <constraint firstAttribute="bottomMargin" secondItem="b0A-Ae-ZxG" secondAttribute="bottom" id="ELb-fu-ZiT"/>
                                                         <constraint firstItem="meB-6A-8Mh" firstAttribute="top" secondItem="gwo-9W-C3V" secondAttribute="topMargin" constant="10" id="H4M-hu-sp7"/>
                                                         <constraint firstAttribute="bottomMargin" secondItem="meB-6A-8Mh" secondAttribute="bottom" constant="10" id="JQ4-lO-jd0"/>
-                                                        <constraint firstItem="b0A-Ae-ZxG" firstAttribute="top" secondItem="gwo-9W-C3V" secondAttribute="topMargin" id="VgB-Ri-k2a"/>
-                                                        <constraint firstItem="0Ax-tb-gyB" firstAttribute="leading" secondItem="meB-6A-8Mh" secondAttribute="trailing" constant="10" id="dPe-6a-PVa"/>
+                                                        <constraint firstItem="meB-6A-8Mh" firstAttribute="leading" secondItem="gwo-9W-C3V" secondAttribute="leadingMargin" constant="10" id="fnM-cy-gFi"/>
                                                         <constraint firstItem="0Ax-tb-gyB" firstAttribute="top" secondItem="gwo-9W-C3V" secondAttribute="topMargin" id="ytJ-RF-uW9"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
@@ -570,7 +559,6 @@
                                                 <connections>
                                                     <outlet property="checkImg" destination="0Ax-tb-gyB" id="qRw-G3-W4V"/>
                                                     <outlet property="emailLbl" destination="meB-6A-8Mh" id="HXk-Sp-ifD"/>
-                                                    <outlet property="profileImg" destination="b0A-Ae-ZxG" id="WKe-dp-5DR"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>

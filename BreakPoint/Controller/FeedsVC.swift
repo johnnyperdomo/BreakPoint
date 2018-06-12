@@ -59,20 +59,23 @@ extension FeedsVC: UITableViewDelegate, UITableViewDataSource {
         let defaultImage = UIImage(named: "defaultProfileImage")
         let message = messageArray[indexPath.row] //gets messages in order
         
-//        DataService.instance.downloadProfileImageURL(forUID: message.senderId) { (returnedURL) in //to call the downloadImage function
-//            
-//            self.downloadedProfileURL = returnedURL
-//            
-//            if returnedURL == "" { //if there is no image chosen, there isn't going to be a url
-//                print("user has no profile image")
-//                return
-//            } else {
-//                print("successfully download profile image")
-//                DataService.instance.downloadProfileImage(forUID: message.senderId, forImageURL: self.downloadedProfileURL, image: cell.imageView!)
-//                
-//                
-//            }
-//        }
+        DataService.instance.downloadProfileImageURL(forUID: message.senderId) { (returnedURL) in //to call the downloadImage function
+            
+            self.downloadedProfileURL = returnedURL
+            
+            if returnedURL == "" { //if there is no image chosen, there isn't going to be a url
+                print("user has no profile image")
+                return
+            } else {
+                print("successfully download profile image")
+                DataService.instance.downloadProfileImage(forUID: message.senderId, forImageURL: self.downloadedProfileURL, image: cell.imageView!, complete: { (success) in
+                    
+                    if success {
+                        self.tableView.reloadData()
+                    }
+                })
+            }
+        }
         
         DataService.instance.getUsername(forUID: message.senderId) { (returnedUsername) in //the returnedUsername is our email that we pulled
             cell.configureCell(profileImage: defaultImage!, email: returnedUsername, messageContent: message.content) //configure the cell, this updates the values in the cell according to the pulled data

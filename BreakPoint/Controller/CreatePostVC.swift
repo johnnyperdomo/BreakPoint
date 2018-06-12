@@ -30,6 +30,7 @@ class CreatePostVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) { //update the changes, view will appear
         super.viewWillAppear(animated)
         self.emailLbl.text = Auth.auth().currentUser?.email //matches the emailLbl
+        profileImg.layer.cornerRadius = profileImg.frame.size.height / 2
         
         if Auth.auth().currentUser != nil {
             DataService.instance.downloadProfileImageURL(forUID: (Auth.auth().currentUser?.uid)!) { (returnedURL) in //to call the downloadImage function
@@ -41,7 +42,13 @@ class CreatePostVC: UIViewController {
                     return
                 } else {
                     print("successfully download profile image")
-                    DataService.instance.downloadProfileImage(forUID: (Auth.auth().currentUser?.uid)!, forImageURL: self.downloadedProfileURL, image: self.profileImg)
+                    DataService.instance.downloadProfileImage(forUID: (Auth.auth().currentUser?.uid)!, forImageURL: self.downloadedProfileURL, image: self.profileImg, complete: { (success) in
+                        
+                        if success {
+                            print("image works")
+                            self.profileImg.layer.cornerRadius = self.profileImg.frame.size.height / 2
+                        }
+                    })
                 }
             }
         }
