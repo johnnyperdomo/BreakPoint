@@ -4,8 +4,8 @@ iOS text-based Social Media app written in Swift 4 using Firebase
 ## Preview
 
 **Built with**
-- Ios 11
-- Xcode 9 
+- Ios 11.3
+- Xcode 9.4 
 
 ## Features
 - **Post text that is instantly sent to ```Realtime Database``` and received instantly to chat with friends in real time.**
