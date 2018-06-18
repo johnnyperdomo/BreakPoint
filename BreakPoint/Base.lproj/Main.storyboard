@@ -57,7 +57,7 @@
                                 <rect key="frame" x="0.0" y="70" width="375" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="85" id="BpE-bO-djC" customClass="FeedCell" customModule="BreakPoint" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="85" id="BpE-bO-djC" customClass="FeedCell" customModule="BreakPoint" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BpE-bO-djC" id="bDi-dp-h1B">
@@ -291,7 +291,7 @@
                                 <rect key="frame" x="0.0" y="103" width="375" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupFeedCell" rowHeight="85" id="3Em-9u-s57" customClass="GroupFeedCell" customModule="BreakPoint" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupFeedCell" rowHeight="85" id="3Em-9u-s57" customClass="GroupFeedCell" customModule="BreakPoint" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Em-9u-s57" id="fNs-TK-zMz">

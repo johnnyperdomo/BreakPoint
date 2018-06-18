@@ -71,7 +71,8 @@ extension FeedsVC: UITableViewDelegate, UITableViewDataSource {
                 DataService.instance.downloadProfileImage(forUID: message.senderId, forImageURL: self.downloadedProfileURL, image: cell.imageView!, complete: { (success) in
                     
                     if success {
-                        self.tableView.reloadData()
+                        cell.imageView?.layer.cornerRadius = (cell.imageView?.frame.size.height)! / 2
+                        cell.imageView?.layer.masksToBounds = true
                     }
                 })
             }

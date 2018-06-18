@@ -98,6 +98,7 @@ class GroupFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "groupFeedCell", for: indexPath) as? GroupFeedCell else { return UITableViewCell() }
         
         let message = groupMessages[indexPath.row] //to get the content
+
         
         DataService.instance.downloadProfileImageURL(forUID: message.senderId) { (returnedURL) in //to call the downloadImage function
             
@@ -112,7 +113,9 @@ class GroupFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 DataService.instance.downloadProfileImage(forUID: message.senderId, forImageURL: self.downloadedProfileURL, image: cell.imageView!, complete: { (success) in
                     
                     if success {
-                        self.tableView.reloadData()
+                        cell.imageView?.layer.cornerRadius = 42
+                        cell.imageView?.layer.masksToBounds = true
+                        
                     }
                 })
                 

@@ -46,7 +46,9 @@ class CreatePostVC: UIViewController {
                         
                         if success {
                             print("image works")
+                            
                             self.profileImg.layer.cornerRadius = self.profileImg.frame.size.height / 2
+                            self.profileImg.layer.masksToBounds = true
                         }
                     })
                 }
