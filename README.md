@@ -21,7 +21,6 @@ iOS text-based Social Media app written in Swift 4 using Firebase
 
 ## Requirements
 ```swift
-import CoreData
 import Firebase
 import FirebaseStorage
 import GoogleSignIn
