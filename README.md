@@ -2,7 +2,7 @@
 iOS text-based Social Media app written in Swift 4 using Firebase 
 
 ## Preview
-![Alt Text](https://media.giphy.com/media/LqfGrP5XFpWLbEFtzV/giphy.gif)
+![Alt Text](https://media.giphy.com/media/ZFuEc2iBRJWh2qRDFR/giphy.gif)
 
 **Built with**
 - Ios 11.3
